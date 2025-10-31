@@ -5,22 +5,9 @@ use serde_json::json;
 use crate::models::AppState;
 
 pub fn get_client_ip(req: &HttpRequest) -> String {
-    if let Some(forwarded) = req.headers().get("x-forwarded-for") {
-        if let Ok(forwarded_str) = forwarded.to_str() {
-            if let Some(first_ip) = forwarded_str.split(',').next() {
-                return first_ip.trim().to_string();
-            }
-        }
-    }
-    if let Some(real_ip) = req.headers().get("x-real-ip") {
-        if let Ok(real_ip_str) = real_ip.to_str() {
-            return real_ip_str.to_string();
-        }
-    }
-    if let Some(peer) = req.peer_addr() {
-        return peer.ip().to_string();
-    }
-    "unknown".to_string()
+    req.peer_addr()
+        .map(|addr| addr.ip().to_string())
+        .unwrap_or_else(|| "unknown".to_string())
 }
 
 pub fn is_ip_allowed(ip: &str, allowed_ips: &[String]) -> bool {
