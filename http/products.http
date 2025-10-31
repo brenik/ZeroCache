@@ -1,0 +1,1023 @@
+### Upsert 1000 test products to /data/products using NDJSON and create indexes for objectID, name, description, category
+POST http://127.0.0.1:8080/data/products
+Content-Type: application/x-ndjson
+X-Upsert-Field: objectID,name,description,category,price
+
+{"objectID": "1", "name": "Adjustable Treadmill Mat", "description": "adjustable treadmill mat with adjustable straps.", "price": 109.46, "category": "Sports"}
+{"objectID": "2", "name": "Multi-Function Slow Cooker", "description": "multi-function slow cooker with programmable timer.", "price": 50.22, "category": "Home Appliances"}
+{"objectID": "3", "name": "Automatic Air Fryer", "description": "automatic air fryer with 12-cup capacity.", "price": 153.36, "category": "Home Appliances"}
+{"objectID": "4", "name": "Ergonomic Laptop Stand", "description": "ergonomic laptop stand with long battery life.", "price": 185.5, "category": "Electronics"}
+{"objectID": "5", "name": "Non-Slip Treadmill Mat", "description": "non-slip treadmill mat made from eco-friendly materials.", "price": 177.57, "category": "Sports"}
+{"objectID": "6", "name": "Noise-Cancelling Wireless Earbuds", "description": "noise-cancelling wireless earbuds with surround sound.", "price": 25.75, "category": "Electronics"}
+{"objectID": "7", "name": "Noise-Cancelling Bluetooth Speaker", "description": "noise-cancelling bluetooth speaker with customizable buttons.", "price": 136.71, "category": "Electronics"}
+{"objectID": "8", "name": "High-Speed Bluetooth Speaker", "description": "high-speed bluetooth speaker with long battery life.", "price": 19.7, "category": "Electronics"}
+{"objectID": "9", "name": "High-Speed External Hard Drive", "description": "high-speed external hard drive with surround sound.", "price": 29.6, "category": "Electronics"}
+{"objectID": "10", "name": "Programmable Vacuum Cleaner", "description": "programmable vacuum cleaner with auto shut-off.", "price": 98.74, "category": "Home Appliances"}
+{"objectID": "11", "name": "Energy-Saving Blender", "description": "energy-saving blender with programmable timer.", "price": 140.96, "category": "Home Appliances"}
+{"objectID": "12", "name": "Fast-Boiling Steam Iron", "description": "fast-boiling steam iron with 12-cup capacity.", "price": 94.99, "category": "Home Appliances"}
+{"objectID": "13", "name": "Automatic Waffle Maker", "description": "automatic waffle maker with multiple speed settings.", "price": 174.57, "category": "Home Appliances"}
+{"objectID": "14", "name": "Fast-Boiling Electric Grill", "description": "fast-boiling electric grill with easy-clean design.", "price": 46.14, "category": "Home Appliances"}
+{"objectID": "15", "name": "RGB Smart Watch", "description": "rgb smart watch with long battery life.", "price": 25.37, "category": "Electronics"}
+{"objectID": "16", "name": "Smart Laptop Stand", "description": "smart laptop stand with customizable buttons.", "price": 66.72, "category": "Electronics"}
+{"objectID": "17", "name": "Adjustable Kettlebell", "description": "adjustable kettlebell for all fitness levels.", "price": 19.8, "category": "Sports"}
+{"objectID": "18", "name": "Portable USB-C Hub", "description": "portable usb-c hub with 4K resolution.", "price": 146.1, "category": "Electronics"}
+{"objectID": "19", "name": "High-Performance Kettlebell", "description": "high-performance kettlebell with anti-slip grip.", "price": 58.9, "category": "Sports"}
+{"objectID": "20", "name": "Breathable Tennis Racket", "description": "breathable tennis racket with anti-slip grip.", "price": 55.12, "category": "Sports"}
+{"objectID": "21", "name": "Automatic Slow Cooker", "description": "automatic slow cooker with easy-clean design.", "price": 152.11, "category": "Home Appliances"}
+{"objectID": "22", "name": "Multi-Function Rice Cooker", "description": "multi-function rice cooker for quick meals.", "price": 186.28, "category": "Home Appliances"}
+{"objectID": "23", "name": "Non-Slip Resistance Bands", "description": "non-slip resistance bands for outdoor activities.", "price": 149.2, "category": "Sports"}
+{"objectID": "24", "name": "Smart Smart Watch", "description": "smart smart watch with customizable buttons.", "price": 13.65, "category": "Electronics"}
+{"objectID": "25", "name": "Fast-Boiling Electric Grill", "description": "fast-boiling electric grill with easy-clean design.", "price": 50.27, "category": "Home Appliances"}
+{"objectID": "26", "name": "Automatic Rice Cooker", "description": "automatic rice cooker with easy-clean design.", "price": 199.69, "category": "Home Appliances"}
+{"objectID": "27", "name": "Durable Gym Gloves", "description": "durable gym gloves for home workouts.", "price": 62.96, "category": "Sports"}
+{"objectID": "28", "name": "Durable Treadmill Mat", "description": "durable treadmill mat for marathon training.", "price": 140.28, "category": "Sports"}
+{"objectID": "29", "name": "Ergonomic Bluetooth Speaker", "description": "ergonomic bluetooth speaker with fast charging.", "price": 140.46, "category": "Electronics"}
+{"objectID": "30", "name": "Non-Slip Yoga Block", "description": "non-slip yoga block for all fitness levels.", "price": 140.83, "category": "Sports"}
+{"objectID": "31", "name": "Noise-Cancelling Laptop Stand", "description": "noise-cancelling laptop stand with surround sound.", "price": 142.85, "category": "Electronics"}
+{"objectID": "32", "name": "High-Speed Bluetooth Speaker", "description": "high-speed bluetooth speaker with adjustable DPI.", "price": 163.79, "category": "Electronics"}
+{"objectID": "33", "name": "Non-Slip Soccer Ball", "description": "non-slip soccer ball for home workouts.", "price": 47.16, "category": "Sports"}
+{"objectID": "34", "name": "Wireless Wireless Mouse", "description": "wireless wireless mouse with 4K resolution.", "price": 131.5, "category": "Electronics"}
+{"objectID": "35", "name": "RGB Mechanical Keyboard", "description": "rgb mechanical keyboard with multi-device connectivity.", "price": 67.51, "category": "Electronics"}
+{"objectID": "36", "name": "Durable Tennis Racket", "description": "durable tennis racket made from eco-friendly materials.", "price": 31.33, "category": "Sports"}
+{"objectID": "37", "name": "Ultra-Thin External Hard Drive", "description": "ultra-thin external hard drive with customizable buttons.", "price": 175.82, "category": "Electronics"}
+{"objectID": "38", "name": "Programmable Vacuum Cleaner", "description": "programmable vacuum cleaner for smoothies and soups.", "price": 35.58, "category": "Home Appliances"}
+{"objectID": "39", "name": "High-Speed Laptop Stand", "description": "high-speed laptop stand with customizable buttons.", "price": 150.82, "category": "Electronics"}
+{"objectID": "40", "name": "Breathable Tennis Racket", "description": "breathable tennis racket for all fitness levels.", "price": 127.36, "category": "Sports"}
+{"objectID": "41", "name": "Non-Slip Dumbbell Set", "description": "non-slip dumbbell set with adjustable straps.", "price": 116.01, "category": "Sports"}
+{"objectID": "42", "name": "Automatic Steam Iron", "description": "automatic steam iron with 12-cup capacity.", "price": 45.5, "category": "Home Appliances"}
+{"objectID": "43", "name": "Ultra-Thin Bluetooth Speaker", "description": "ultra-thin bluetooth speaker with customizable buttons.", "price": 185.18, "category": "Electronics"}
+{"objectID": "44", "name": "Ergonomic Smartphone Holder", "description": "ergonomic smartphone holder with surround sound.", "price": 165.78, "category": "Electronics"}
+{"objectID": "45", "name": "Stainless Steel Steam Iron", "description": "stainless steel steam iron with auto shut-off.", "price": 121.54, "category": "Home Appliances"}
+{"objectID": "46", "name": "Stainless Steel Slow Cooker", "description": "stainless steel slow cooker for quick meals.", "price": 195.42, "category": "Home Appliances"}
+{"objectID": "47", "name": "RGB Portable Charger", "description": "rgb portable charger with multi-device connectivity.", "price": 65.13, "category": "Electronics"}
+{"objectID": "48", "name": "Lightweight Tennis Racket", "description": "lightweight tennis racket for marathon training.", "price": 77.81, "category": "Sports"}
+{"objectID": "49", "name": "Lightweight Resistance Bands", "description": "lightweight resistance bands with shock absorption.", "price": 101.75, "category": "Sports"}
+{"objectID": "50", "name": "Fast-Boiling Rice Cooker", "description": "fast-boiling rice cooker with programmable timer.", "price": 77.57, "category": "Home Appliances"}
+{"objectID": "51", "name": "Eco-Friendly Jump Rope", "description": "eco-friendly jump rope with shock absorption.", "price": 149.01, "category": "Sports"}
+{"objectID": "52", "name": "Noise-Cancelling USB-C Hub", "description": "noise-cancelling usb-c hub with long battery life.", "price": 30.83, "category": "Electronics"}
+{"objectID": "53", "name": "Fast-Boiling Slow Cooker", "description": "fast-boiling slow cooker with auto shut-off.", "price": 173.87, "category": "Home Appliances"}
+{"objectID": "54", "name": "Compact Waffle Maker", "description": "compact waffle maker for quick meals.", "price": 129.54, "category": "Home Appliances"}
+{"objectID": "55", "name": "Portable USB-C Hub", "description": "portable usb-c hub with long battery life.", "price": 65.43, "category": "Electronics"}
+{"objectID": "56", "name": "Automatic Coffee Maker", "description": "automatic coffee maker for quick meals.", "price": 162.04, "category": "Home Appliances"}
+{"objectID": "57", "name": "Fast-Boiling Juicer", "description": "fast-boiling juicer with programmable timer.", "price": 157.84, "category": "Home Appliances"}
+{"objectID": "58", "name": "Portable Gaming Headset", "description": "portable gaming headset with customizable buttons.", "price": 197.94, "category": "Electronics"}
+{"objectID": "59", "name": "Wireless Gaming Headset", "description": "wireless gaming headset with multi-device connectivity.", "price": 185.38, "category": "Electronics"}
+{"objectID": "60", "name": "High-Speed Smart Watch", "description": "high-speed smart watch with surround sound.", "price": 196.16, "category": "Electronics"}
+{"objectID": "61", "name": "Adjustable Soccer Ball", "description": "adjustable soccer ball with anti-slip grip.", "price": 31.21, "category": "Sports"}
+{"objectID": "62", "name": "Ultra-Thin Bluetooth Speaker", "description": "ultra-thin bluetooth speaker with fast charging.", "price": 157.45, "category": "Electronics"}
+{"objectID": "63", "name": "High-Performance Cycling Helmet", "description": "high-performance cycling helmet with adjustable straps.", "price": 68.09, "category": "Sports"}
+{"objectID": "64", "name": "Fast-Boiling Microwave", "description": "fast-boiling microwave with programmable timer.", "price": 152.74, "category": "Home Appliances"}
+{"objectID": "65", "name": "Ergonomic Wireless Mouse", "description": "ergonomic wireless mouse with long battery life.", "price": 119.82, "category": "Electronics"}
+{"objectID": "66", "name": "Wireless Smartphone Holder", "description": "wireless smartphone holder with long battery life.", "price": 170.74, "category": "Electronics"}
+{"objectID": "67", "name": "Noise-Cancelling Smart Watch", "description": "noise-cancelling smart watch with 4K resolution.", "price": 168.78, "category": "Electronics"}
+{"objectID": "68", "name": "Ultra-Thin Webcam", "description": "ultra-thin webcam with fast charging.", "price": 44.4, "category": "Electronics"}
+{"objectID": "69", "name": "Programmable Waffle Maker", "description": "programmable waffle maker for quick meals.", "price": 196.01, "category": "Home Appliances"}
+{"objectID": "70", "name": "Durable Basketball", "description": "durable basketball with shock absorption.", "price": 199.24, "category": "Sports"}
+{"objectID": "71", "name": "Stainless Steel Steam Iron", "description": "stainless steel steam iron with 12-cup capacity.", "price": 83.87, "category": "Home Appliances"}
+{"objectID": "72", "name": "Wireless Bluetooth Speaker", "description": "wireless bluetooth speaker with long battery life.", "price": 43.39, "category": "Electronics"}
+{"objectID": "73", "name": "Multi-Function Blender", "description": "multi-function blender for smoothies and soups.", "price": 171.03, "category": "Home Appliances"}
+{"objectID": "74", "name": "Stainless Steel Hand Mixer", "description": "stainless steel hand mixer with multiple speed settings.", "price": 60.99, "category": "Home Appliances"}
+{"objectID": "75", "name": "Programmable Toaster Oven", "description": "programmable toaster oven with 12-cup capacity.", "price": 161.79, "category": "Home Appliances"}
+{"objectID": "76", "name": "Smart 4K Monitor", "description": "smart 4k monitor with surround sound.", "price": 39.48, "category": "Electronics"}
+{"objectID": "77", "name": "RGB Bluetooth Speaker", "description": "rgb bluetooth speaker with customizable buttons.", "price": 137.99, "category": "Electronics"}
+{"objectID": "78", "name": "Adjustable Jump Rope", "description": "adjustable jump rope for marathon training.", "price": 41.37, "category": "Sports"}
+{"objectID": "79", "name": "Wireless Smart Watch", "description": "wireless smart watch with adjustable DPI.", "price": 155.36, "category": "Electronics"}
+{"objectID": "80", "name": "Adjustable Running Shoes", "description": "adjustable running shoes with adjustable straps.", "price": 169.62, "category": "Sports"}
+{"objectID": "81", "name": "Smart USB-C Hub", "description": "smart usb-c hub with adjustable DPI.", "price": 79.89, "category": "Electronics"}
+{"objectID": "82", "name": "Non-Slip Treadmill Mat", "description": "non-slip treadmill mat for home workouts.", "price": 33.76, "category": "Sports"}
+{"objectID": "83", "name": "Portable Gaming Mouse Pad", "description": "portable gaming mouse pad with 4K resolution.", "price": 24.74, "category": "Electronics"}
+{"objectID": "84", "name": "Energy-Saving Vacuum Cleaner", "description": "energy-saving vacuum cleaner with 12-cup capacity.", "price": 198.12, "category": "Home Appliances"}
+{"objectID": "85", "name": "Eco-Friendly Cycling Helmet", "description": "eco-friendly cycling helmet for home workouts.", "price": 97.33, "category": "Sports"}
+{"objectID": "86", "name": "Eco-Friendly Tennis Racket", "description": "eco-friendly tennis racket for all fitness levels.", "price": 94.64, "category": "Sports"}
+{"objectID": "87", "name": "High-Speed Smartphone Holder", "description": "high-speed smartphone holder with waterproof design.", "price": 120.82, "category": "Electronics"}
+{"objectID": "88", "name": "Breathable Dumbbell Set", "description": "breathable dumbbell set with anti-slip grip.", "price": 147.99, "category": "Sports"}
+{"objectID": "89", "name": "Noise-Cancelling External Hard Drive", "description": "noise-cancelling external hard drive with waterproof design.", "price": 19.23, "category": "Electronics"}
+{"objectID": "90", "name": "Adjustable Yoga Block", "description": "adjustable yoga block with anti-slip grip.", "price": 140.84, "category": "Sports"}
+{"objectID": "91", "name": "Wireless Gaming Headset", "description": "wireless gaming headset with waterproof design.", "price": 155.17, "category": "Electronics"}
+{"objectID": "92", "name": "Noise-Cancelling Portable Charger", "description": "noise-cancelling portable charger with 4K resolution.", "price": 158.06, "category": "Electronics"}
+{"objectID": "93", "name": "Smart External Hard Drive", "description": "smart external hard drive with 4K resolution.", "price": 110.69, "category": "Electronics"}
+{"objectID": "94", "name": "Automatic Air Fryer", "description": "automatic air fryer for small kitchens.", "price": 76.25, "category": "Home Appliances"}
+{"objectID": "95", "name": "Noise-Cancelling Webcam", "description": "noise-cancelling webcam with customizable buttons.", "price": 111.49, "category": "Electronics"}
+{"objectID": "96", "name": "Noise-Cancelling Wireless Earbuds", "description": "noise-cancelling wireless earbuds with multi-device connectivity.", "price": 157.75, "category": "Electronics"}
+{"objectID": "97", "name": "Breathable Jump Rope", "description": "breathable jump rope made from eco-friendly materials.", "price": 78.48, "category": "Sports"}
+{"objectID": "98", "name": "Lightweight Yoga Block", "description": "lightweight yoga block for outdoor activities.", "price": 138.97, "category": "Sports"}
+{"objectID": "99", "name": "Energy-Saving Vacuum Cleaner", "description": "energy-saving vacuum cleaner with multiple speed settings.", "price": 80.94, "category": "Home Appliances"}
+{"objectID": "100", "name": "Noise-Cancelling Laptop Stand", "description": "noise-cancelling laptop stand with fast charging.", "price": 197.98, "category": "Electronics"}
+{"objectID": "101", "name": "Durable Soccer Ball", "description": "durable soccer ball for outdoor activities.", "price": 178.9, "category": "Sports"}
+{"objectID": "102", "name": "Energy-Saving Blender", "description": "energy-saving blender with easy-clean design.", "price": 199.18, "category": "Home Appliances"}
+{"objectID": "103", "name": "Breathable Basketball", "description": "breathable basketball with anti-slip grip.", "price": 75.22, "category": "Sports"}
+{"objectID": "104", "name": "Eco-Friendly Sports Water Bottle", "description": "eco-friendly sports water bottle with anti-slip grip.", "price": 49.57, "category": "Sports"}
+{"objectID": "105", "name": "High-Performance Fitness Tracker", "description": "high-performance fitness tracker with anti-slip grip.", "price": 103.47, "category": "Sports"}
+{"objectID": "106", "name": "Portable Wireless Mouse", "description": "portable wireless mouse with customizable buttons.", "price": 135.47, "category": "Electronics"}
+{"objectID": "107", "name": "Ergonomic Gaming Headset", "description": "ergonomic gaming headset with waterproof design.", "price": 13.58, "category": "Electronics"}
+{"objectID": "108", "name": "Energy-Saving Slow Cooker", "description": "energy-saving slow cooker with auto shut-off.", "price": 138.88, "category": "Home Appliances"}
+{"objectID": "109", "name": "Programmable Toaster Oven", "description": "programmable toaster oven for quick meals.", "price": 189.49, "category": "Home Appliances"}
+{"objectID": "110", "name": "Noise-Cancelling Smartphone Holder", "description": "noise-cancelling smartphone holder with 4K resolution.", "price": 192.07, "category": "Electronics"}
+{"objectID": "111", "name": "Ergonomic Wireless Earbuds", "description": "ergonomic wireless earbuds with waterproof design.", "price": 181.54, "category": "Electronics"}
+{"objectID": "112", "name": "Adjustable Running Shoes", "description": "adjustable running shoes for outdoor activities.", "price": 29.76, "category": "Sports"}
+{"objectID": "113", "name": "Adjustable Jump Rope", "description": "adjustable jump rope with shock absorption.", "price": 109.13, "category": "Sports"}
+{"objectID": "114", "name": "RGB 4K Monitor", "description": "rgb 4k monitor with customizable buttons.", "price": 162.29, "category": "Electronics"}
+{"objectID": "115", "name": "High-Performance Fitness Tracker", "description": "high-performance fitness tracker for home workouts.", "price": 91.02, "category": "Sports"}
+{"objectID": "116", "name": "Automatic Blender", "description": "automatic blender with multiple speed settings.", "price": 103.78, "category": "Home Appliances"}
+{"objectID": "117", "name": "Ultra-Thin 4K Monitor", "description": "ultra-thin 4k monitor with waterproof design.", "price": 175.6, "category": "Electronics"}
+{"objectID": "118", "name": "Non-Slip Kettlebell", "description": "non-slip kettlebell made from eco-friendly materials.", "price": 79.15, "category": "Sports"}
+{"objectID": "119", "name": "Compact Coffee Maker", "description": "compact coffee maker with programmable timer.", "price": 177.71, "category": "Home Appliances"}
+{"objectID": "120", "name": "Noise-Cancelling Bluetooth Speaker", "description": "noise-cancelling bluetooth speaker with fast charging.", "price": 43.06, "category": "Electronics"}
+{"objectID": "121", "name": "Fast-Boiling Electric Grill", "description": "fast-boiling electric grill for small kitchens.", "price": 156.86, "category": "Home Appliances"}
+{"objectID": "122", "name": "Stainless Steel Electric Kettle", "description": "stainless steel electric kettle for small kitchens.", "price": 106.87, "category": "Home Appliances"}
+{"objectID": "123", "name": "Durable Cycling Helmet", "description": "durable cycling helmet for home workouts.", "price": 115.3, "category": "Sports"}
+{"objectID": "124", "name": "Durable Kettlebell", "description": "durable kettlebell for home workouts.", "price": 55.9, "category": "Sports"}
+{"objectID": "125", "name": "Automatic Blender", "description": "automatic blender with 12-cup capacity.", "price": 87.02, "category": "Home Appliances"}
+{"objectID": "126", "name": "RGB External Hard Drive", "description": "rgb external hard drive with customizable buttons.", "price": 23.53, "category": "Electronics"}
+{"objectID": "127", "name": "Programmable Air Fryer", "description": "programmable air fryer with programmable timer.", "price": 76.67, "category": "Home Appliances"}
+{"objectID": "128", "name": "Compact Coffee Maker", "description": "compact coffee maker with 12-cup capacity.", "price": 33.75, "category": "Home Appliances"}
+{"objectID": "129", "name": "Multi-Function Hand Mixer", "description": "multi-function hand mixer for smoothies and soups.", "price": 156.16, "category": "Home Appliances"}
+{"objectID": "130", "name": "Compact Vacuum Cleaner", "description": "compact vacuum cleaner for small kitchens.", "price": 186.14, "category": "Home Appliances"}
+{"objectID": "131", "name": "Stainless Steel Coffee Maker", "description": "stainless steel coffee maker with 12-cup capacity.", "price": 24.64, "category": "Home Appliances"}
+{"objectID": "132", "name": "Fast-Boiling Blender", "description": "fast-boiling blender with 12-cup capacity.", "price": 130.09, "category": "Home Appliances"}
+{"objectID": "133", "name": "Portable Smart Watch", "description": "portable smart watch with multi-device connectivity.", "price": 64.93, "category": "Electronics"}
+{"objectID": "134", "name": "High-Speed Smartphone Holder", "description": "high-speed smartphone holder with 4K resolution.", "price": 160.3, "category": "Electronics"}
+{"objectID": "135", "name": "Smart Mechanical Keyboard", "description": "smart mechanical keyboard with customizable buttons.", "price": 191.82, "category": "Electronics"}
+{"objectID": "136", "name": "Automatic Air Fryer", "description": "automatic air fryer for smoothies and soups.", "price": 46.83, "category": "Home Appliances"}
+{"objectID": "137", "name": "Stainless Steel Coffee Maker", "description": "stainless steel coffee maker with auto shut-off.", "price": 180.58, "category": "Home Appliances"}
+{"objectID": "138", "name": "Programmable Microwave", "description": "programmable microwave with programmable timer.", "price": 151.52, "category": "Home Appliances"}
+{"objectID": "139", "name": "Lightweight Sports Water Bottle", "description": "lightweight sports water bottle for outdoor activities.", "price": 68.6, "category": "Sports"}
+{"objectID": "140", "name": "Adjustable Running Shoes", "description": "adjustable running shoes with shock absorption.", "price": 34.81, "category": "Sports"}
+{"objectID": "141", "name": "Lightweight Yoga Mat", "description": "lightweight yoga mat for outdoor activities.", "price": 110.68, "category": "Sports"}
+{"objectID": "142", "name": "Energy-Saving Vacuum Cleaner", "description": "energy-saving vacuum cleaner for quick meals.", "price": 52.18, "category": "Home Appliances"}
+{"objectID": "143", "name": "Portable Wireless Earbuds", "description": "portable wireless earbuds with adjustable DPI.", "price": 107.34, "category": "Electronics"}
+{"objectID": "144", "name": "Wireless Smartphone Holder", "description": "wireless smartphone holder with long battery life.", "price": 59.0, "category": "Electronics"}
+{"objectID": "145", "name": "Adjustable Running Shoes", "description": "adjustable running shoes with adjustable straps.", "price": 66.59, "category": "Sports"}
+{"objectID": "146", "name": "Wireless Smartphone Holder", "description": "wireless smartphone holder with surround sound.", "price": 180.99, "category": "Electronics"}
+{"objectID": "147", "name": "Durable Basketball", "description": "durable basketball made from eco-friendly materials.", "price": 162.95, "category": "Sports"}
+{"objectID": "148", "name": "Lightweight Cycling Helmet", "description": "lightweight cycling helmet for marathon training.", "price": 156.59, "category": "Sports"}
+{"objectID": "149", "name": "RGB Wireless Earbuds", "description": "rgb wireless earbuds with multi-device connectivity.", "price": 64.11, "category": "Electronics"}
+{"objectID": "150", "name": "Durable Sports Water Bottle", "description": "durable sports water bottle with adjustable straps.", "price": 116.22, "category": "Sports"}
+{"objectID": "151", "name": "High-Performance Yoga Mat", "description": "high-performance yoga mat for outdoor activities.", "price": 12.74, "category": "Sports"}
+{"objectID": "152", "name": "Lightweight Yoga Mat", "description": "lightweight yoga mat made from eco-friendly materials.", "price": 150.26, "category": "Sports"}
+{"objectID": "153", "name": "Breathable Yoga Mat", "description": "breathable yoga mat with adjustable straps.", "price": 194.12, "category": "Sports"}
+{"objectID": "154", "name": "Multi-Function Slow Cooker", "description": "multi-function slow cooker with multiple speed settings.", "price": 69.45, "category": "Home Appliances"}
+{"objectID": "155", "name": "Lightweight Yoga Block", "description": "lightweight yoga block made from eco-friendly materials.", "price": 32.38, "category": "Sports"}
+{"objectID": "156", "name": "Noise-Cancelling LED Desk Lamp", "description": "noise-cancelling led desk lamp with customizable buttons.", "price": 175.87, "category": "Electronics"}
+{"objectID": "157", "name": "Lightweight Cycling Helmet", "description": "lightweight cycling helmet for outdoor activities.", "price": 87.17, "category": "Sports"}
+{"objectID": "158", "name": "Compact Food Processor", "description": "compact food processor with 12-cup capacity.", "price": 110.73, "category": "Home Appliances"}
+{"objectID": "159", "name": "Ergonomic Gaming Mouse Pad", "description": "ergonomic gaming mouse pad with multi-device connectivity.", "price": 133.88, "category": "Electronics"}
+{"objectID": "160", "name": "High-Performance Tennis Racket", "description": "high-performance tennis racket for outdoor activities.", "price": 27.28, "category": "Sports"}
+{"objectID": "161", "name": "Noise-Cancelling Portable Charger", "description": "noise-cancelling portable charger with fast charging.", "price": 113.99, "category": "Electronics"}
+{"objectID": "162", "name": "Fast-Boiling Microwave", "description": "fast-boiling microwave with 12-cup capacity.", "price": 32.93, "category": "Home Appliances"}
+{"objectID": "163", "name": "Portable Gaming Mouse Pad", "description": "portable gaming mouse pad with 4K resolution.", "price": 138.72, "category": "Electronics"}
+{"objectID": "164", "name": "Eco-Friendly Yoga Block", "description": "eco-friendly yoga block with adjustable straps.", "price": 49.69, "category": "Sports"}
+{"objectID": "165", "name": "Breathable Tennis Racket", "description": "breathable tennis racket with adjustable straps.", "price": 70.96, "category": "Sports"}
+{"objectID": "166", "name": "Stainless Steel Hand Mixer", "description": "stainless steel hand mixer for smoothies and soups.", "price": 109.28, "category": "Home Appliances"}
+{"objectID": "167", "name": "Multi-Function Slow Cooker", "description": "multi-function slow cooker for small kitchens.", "price": 100.24, "category": "Home Appliances"}
+{"objectID": "168", "name": "Adjustable Sports Water Bottle", "description": "adjustable sports water bottle for outdoor activities.", "price": 110.42, "category": "Sports"}
+{"objectID": "169", "name": "Wireless Portable Charger", "description": "wireless portable charger with surround sound.", "price": 57.07, "category": "Electronics"}
+{"objectID": "170", "name": "Multi-Function Slow Cooker", "description": "multi-function slow cooker with 12-cup capacity.", "price": 130.87, "category": "Home Appliances"}
+{"objectID": "171", "name": "Eco-Friendly Yoga Block", "description": "eco-friendly yoga block with shock absorption.", "price": 28.49, "category": "Sports"}
+{"objectID": "172", "name": "Adjustable Running Shoes", "description": "adjustable running shoes with anti-slip grip.", "price": 109.23, "category": "Sports"}
+{"objectID": "173", "name": "Programmable Coffee Maker", "description": "programmable coffee maker for small kitchens.", "price": 14.34, "category": "Home Appliances"}
+{"objectID": "174", "name": "Portable Mechanical Keyboard", "description": "portable mechanical keyboard with customizable buttons.", "price": 89.03, "category": "Electronics"}
+{"objectID": "175", "name": "Smart Mechanical Keyboard", "description": "smart mechanical keyboard with waterproof design.", "price": 11.06, "category": "Electronics"}
+{"objectID": "176", "name": "Smart 4K Monitor", "description": "smart 4k monitor with fast charging.", "price": 160.37, "category": "Electronics"}
+{"objectID": "177", "name": "Compact Electric Grill", "description": "compact electric grill with auto shut-off.", "price": 142.96, "category": "Home Appliances"}
+{"objectID": "178", "name": "Ergonomic Webcam", "description": "ergonomic webcam with waterproof design.", "price": 89.93, "category": "Electronics"}
+{"objectID": "179", "name": "Portable Gaming Mouse Pad", "description": "portable gaming mouse pad with surround sound.", "price": 167.52, "category": "Electronics"}
+{"objectID": "180", "name": "High-Performance Tennis Racket", "description": "high-performance tennis racket made from eco-friendly materials.", "price": 114.1, "category": "Sports"}
+{"objectID": "181", "name": "Portable LED Desk Lamp", "description": "portable led desk lamp with waterproof design.", "price": 42.27, "category": "Electronics"}
+{"objectID": "182", "name": "RGB Wireless Mouse", "description": "rgb wireless mouse with customizable buttons.", "price": 102.22, "category": "Electronics"}
+{"objectID": "183", "name": "High-Speed LED Desk Lamp", "description": "high-speed led desk lamp with adjustable DPI.", "price": 172.24, "category": "Electronics"}
+{"objectID": "184", "name": "Noise-Cancelling Mechanical Keyboard", "description": "noise-cancelling mechanical keyboard with fast charging.", "price": 185.15, "category": "Electronics"}
+{"objectID": "185", "name": "Automatic Steam Iron", "description": "automatic steam iron with 12-cup capacity.", "price": 56.15, "category": "Home Appliances"}
+{"objectID": "186", "name": "Eco-Friendly Kettlebell", "description": "eco-friendly kettlebell with shock absorption.", "price": 188.91, "category": "Sports"}
+{"objectID": "187", "name": "Multi-Function Slow Cooker", "description": "multi-function slow cooker with auto shut-off.", "price": 120.27, "category": "Home Appliances"}
+{"objectID": "188", "name": "Portable External Hard Drive", "description": "portable external hard drive with adjustable DPI.", "price": 54.32, "category": "Electronics"}
+{"objectID": "189", "name": "Ergonomic Mechanical Keyboard", "description": "ergonomic mechanical keyboard with waterproof design.", "price": 85.72, "category": "Electronics"}
+{"objectID": "190", "name": "Multi-Function Coffee Maker", "description": "multi-function coffee maker for quick meals.", "price": 163.4, "category": "Home Appliances"}
+{"objectID": "191", "name": "High-Speed Laptop Stand", "description": "high-speed laptop stand with multi-device connectivity.", "price": 154.69, "category": "Electronics"}
+{"objectID": "192", "name": "Programmable Food Processor", "description": "programmable food processor with auto shut-off.", "price": 39.61, "category": "Home Appliances"}
+{"objectID": "193", "name": "Compact Slow Cooker", "description": "compact slow cooker with auto shut-off.", "price": 92.61, "category": "Home Appliances"}
+{"objectID": "194", "name": "Programmable Hand Mixer", "description": "programmable hand mixer with programmable timer.", "price": 179.28, "category": "Home Appliances"}
+{"objectID": "195", "name": "Multi-Function Coffee Maker", "description": "multi-function coffee maker with auto shut-off.", "price": 15.1, "category": "Home Appliances"}
+{"objectID": "196", "name": "Smart External Hard Drive", "description": "smart external hard drive with adjustable DPI.", "price": 174.81, "category": "Electronics"}
+{"objectID": "197", "name": "Fast-Boiling Electric Grill", "description": "fast-boiling electric grill for small kitchens.", "price": 106.9, "category": "Home Appliances"}
+{"objectID": "198", "name": "Ultra-Thin Smart Watch", "description": "ultra-thin smart watch with multi-device connectivity.", "price": 95.33, "category": "Electronics"}
+{"objectID": "199", "name": "Eco-Friendly Sports Water Bottle", "description": "eco-friendly sports water bottle for home workouts.", "price": 20.46, "category": "Sports"}
+{"objectID": "200", "name": "Portable Smart Watch", "description": "portable smart watch with multi-device connectivity.", "price": 168.33, "category": "Electronics"}
+{"objectID": "201", "name": "Compact Electric Kettle", "description": "compact electric kettle with auto shut-off.", "price": 181.67, "category": "Home Appliances"}
+{"objectID": "202", "name": "Multi-Function Juicer", "description": "multi-function juicer with programmable timer.", "price": 158.86, "category": "Home Appliances"}
+{"objectID": "203", "name": "Portable Mechanical Keyboard", "description": "portable mechanical keyboard with 4K resolution.", "price": 54.96, "category": "Electronics"}
+{"objectID": "204", "name": "Portable Wireless Earbuds", "description": "portable wireless earbuds with surround sound.", "price": 40.08, "category": "Electronics"}
+{"objectID": "205", "name": "High-Performance Jump Rope", "description": "high-performance jump rope for all fitness levels.", "price": 103.15, "category": "Sports"}
+{"objectID": "206", "name": "Durable Jump Rope", "description": "durable jump rope made from eco-friendly materials.", "price": 185.99, "category": "Sports"}
+{"objectID": "207", "name": "Multi-Function Coffee Maker", "description": "multi-function coffee maker with programmable timer.", "price": 16.38, "category": "Home Appliances"}
+{"objectID": "208", "name": "Ultra-Thin 4K Monitor", "description": "ultra-thin 4k monitor with waterproof design.", "price": 55.62, "category": "Electronics"}
+{"objectID": "209", "name": "High-Speed Webcam", "description": "high-speed webcam with adjustable DPI.", "price": 136.63, "category": "Electronics"}
+{"objectID": "210", "name": "Wireless Laptop Stand", "description": "wireless laptop stand with adjustable DPI.", "price": 13.11, "category": "Electronics"}
+{"objectID": "211", "name": "Eco-Friendly Yoga Mat", "description": "eco-friendly yoga mat for marathon training.", "price": 94.65, "category": "Sports"}
+{"objectID": "212", "name": "Durable Treadmill Mat", "description": "durable treadmill mat for all fitness levels.", "price": 88.79, "category": "Sports"}
+{"objectID": "213", "name": "Ergonomic USB-C Hub", "description": "ergonomic usb-c hub with long battery life.", "price": 22.9, "category": "Electronics"}
+{"objectID": "214", "name": "Fast-Boiling Air Fryer", "description": "fast-boiling air fryer with multiple speed settings.", "price": 195.08, "category": "Home Appliances"}
+{"objectID": "215", "name": "Automatic Microwave", "description": "automatic microwave with auto shut-off.", "price": 34.1, "category": "Home Appliances"}
+{"objectID": "216", "name": "Energy-Saving Hand Mixer", "description": "energy-saving hand mixer for smoothies and soups.", "price": 151.75, "category": "Home Appliances"}
+{"objectID": "217", "name": "Smart Smart Watch", "description": "smart smart watch with surround sound.", "price": 35.64, "category": "Electronics"}
+{"objectID": "218", "name": "Non-Slip Running Shoes", "description": "non-slip running shoes with shock absorption.", "price": 29.74, "category": "Sports"}
+{"objectID": "219", "name": "RGB Webcam", "description": "rgb webcam with fast charging.", "price": 187.25, "category": "Electronics"}
+{"objectID": "220", "name": "Breathable Soccer Ball", "description": "breathable soccer ball with shock absorption.", "price": 99.6, "category": "Sports"}
+{"objectID": "221", "name": "RGB Portable Charger", "description": "rgb portable charger with waterproof design.", "price": 124.0, "category": "Electronics"}
+{"objectID": "222", "name": "Smart USB-C Hub", "description": "smart usb-c hub with customizable buttons.", "price": 199.92, "category": "Electronics"}
+{"objectID": "223", "name": "Multi-Function Steam Iron", "description": "multi-function steam iron with programmable timer.", "price": 88.32, "category": "Home Appliances"}
+{"objectID": "224", "name": "Portable Wireless Mouse", "description": "portable wireless mouse with multi-device connectivity.", "price": 85.89, "category": "Electronics"}
+{"objectID": "225", "name": "Stainless Steel Coffee Maker", "description": "stainless steel coffee maker with easy-clean design.", "price": 181.32, "category": "Home Appliances"}
+{"objectID": "226", "name": "High-Performance Cycling Helmet", "description": "high-performance cycling helmet with shock absorption.", "price": 153.04, "category": "Sports"}
+{"objectID": "227", "name": "Breathable Tennis Racket", "description": "breathable tennis racket made from eco-friendly materials.", "price": 175.64, "category": "Sports"}
+{"objectID": "228", "name": "Stainless Steel Hand Mixer", "description": "stainless steel hand mixer for small kitchens.", "price": 15.17, "category": "Home Appliances"}
+{"objectID": "229", "name": "Ergonomic 4K Monitor", "description": "ergonomic 4k monitor with adjustable DPI.", "price": 52.58, "category": "Electronics"}
+{"objectID": "230", "name": "Non-Slip Yoga Block", "description": "non-slip yoga block made from eco-friendly materials.", "price": 92.05, "category": "Sports"}
+{"objectID": "231", "name": "Smart Smart Watch", "description": "smart smart watch with long battery life.", "price": 198.47, "category": "Electronics"}
+{"objectID": "232", "name": "High-Speed Wireless Mouse", "description": "high-speed wireless mouse with surround sound.", "price": 134.03, "category": "Electronics"}
+{"objectID": "233", "name": "Fast-Boiling Coffee Maker", "description": "fast-boiling coffee maker with easy-clean design.", "price": 71.8, "category": "Home Appliances"}
+{"objectID": "234", "name": "Eco-Friendly Tennis Racket", "description": "eco-friendly tennis racket with adjustable straps.", "price": 75.2, "category": "Sports"}
+{"objectID": "235", "name": "Ultra-Thin Mechanical Keyboard", "description": "ultra-thin mechanical keyboard with customizable buttons.", "price": 154.73, "category": "Electronics"}
+{"objectID": "236", "name": "Breathable Sports Water Bottle", "description": "breathable sports water bottle for home workouts.", "price": 169.93, "category": "Sports"}
+{"objectID": "237", "name": "Stainless Steel Juicer", "description": "stainless steel juicer with multiple speed settings.", "price": 82.28, "category": "Home Appliances"}
+{"objectID": "238", "name": "Portable Laptop Stand", "description": "portable laptop stand with waterproof design.", "price": 57.59, "category": "Electronics"}
+{"objectID": "239", "name": "Breathable Fitness Tracker", "description": "breathable fitness tracker for marathon training.", "price": 195.02, "category": "Sports"}
+{"objectID": "240", "name": "Ultra-Thin Portable Charger", "description": "ultra-thin portable charger with waterproof design.", "price": 156.79, "category": "Electronics"}
+{"objectID": "241", "name": "Breathable Resistance Bands", "description": "breathable resistance bands for all fitness levels.", "price": 179.09, "category": "Sports"}
+{"objectID": "242", "name": "RGB Webcam", "description": "rgb webcam with 4K resolution.", "price": 57.81, "category": "Electronics"}
+{"objectID": "243", "name": "Non-Slip Treadmill Mat", "description": "non-slip treadmill mat made from eco-friendly materials.", "price": 33.91, "category": "Sports"}
+{"objectID": "244", "name": "Automatic Electric Grill", "description": "automatic electric grill with 12-cup capacity.", "price": 34.52, "category": "Home Appliances"}
+{"objectID": "245", "name": "High-Performance Treadmill Mat", "description": "high-performance treadmill mat for outdoor activities.", "price": 144.28, "category": "Sports"}
+{"objectID": "246", "name": "Breathable Dumbbell Set", "description": "breathable dumbbell set with anti-slip grip.", "price": 77.26, "category": "Sports"}
+{"objectID": "247", "name": "Fast-Boiling Food Processor", "description": "fast-boiling food processor for smoothies and soups.", "price": 115.95, "category": "Home Appliances"}
+{"objectID": "248", "name": "Breathable Tennis Racket", "description": "breathable tennis racket with anti-slip grip.", "price": 98.49, "category": "Sports"}
+{"objectID": "249", "name": "Compact Hand Mixer", "description": "compact hand mixer with 12-cup capacity.", "price": 23.61, "category": "Home Appliances"}
+{"objectID": "250", "name": "Wireless Wireless Earbuds", "description": "wireless wireless earbuds with 4K resolution.", "price": 122.56, "category": "Electronics"}
+{"objectID": "251", "name": "Ergonomic Mechanical Keyboard", "description": "ergonomic mechanical keyboard with 4K resolution.", "price": 82.16, "category": "Electronics"}
+{"objectID": "252", "name": "Wireless LED Desk Lamp", "description": "wireless led desk lamp with customizable buttons.", "price": 24.88, "category": "Electronics"}
+{"objectID": "253", "name": "Eco-Friendly Yoga Mat", "description": "eco-friendly yoga mat with anti-slip grip.", "price": 92.5, "category": "Sports"}
+{"objectID": "254", "name": "High-Speed Gaming Mouse Pad", "description": "high-speed gaming mouse pad with multi-device connectivity.", "price": 50.76, "category": "Electronics"}
+{"objectID": "255", "name": "Compact Food Processor", "description": "compact food processor for smoothies and soups.", "price": 128.2, "category": "Home Appliances"}
+{"objectID": "256", "name": "Non-Slip Kettlebell", "description": "non-slip kettlebell for all fitness levels.", "price": 104.41, "category": "Sports"}
+{"objectID": "257", "name": "Multi-Function Steam Iron", "description": "multi-function steam iron for smoothies and soups.", "price": 12.79, "category": "Home Appliances"}
+{"objectID": "258", "name": "Eco-Friendly Yoga Block", "description": "eco-friendly yoga block with shock absorption.", "price": 150.16, "category": "Sports"}
+{"objectID": "259", "name": "RGB Smart Watch", "description": "rgb smart watch with adjustable DPI.", "price": 22.62, "category": "Electronics"}
+{"objectID": "260", "name": "Programmable Coffee Maker", "description": "programmable coffee maker for quick meals.", "price": 87.6, "category": "Home Appliances"}
+{"objectID": "261", "name": "Ergonomic Portable Charger", "description": "ergonomic portable charger with waterproof design.", "price": 47.23, "category": "Electronics"}
+{"objectID": "262", "name": "Eco-Friendly Fitness Tracker", "description": "eco-friendly fitness tracker for marathon training.", "price": 160.2, "category": "Sports"}
+{"objectID": "263", "name": "Noise-Cancelling Wireless Earbuds", "description": "noise-cancelling wireless earbuds with customizable buttons.", "price": 119.19, "category": "Electronics"}
+{"objectID": "264", "name": "Portable Gaming Mouse Pad", "description": "portable gaming mouse pad with long battery life.", "price": 181.96, "category": "Electronics"}
+{"objectID": "265", "name": "Eco-Friendly Soccer Ball", "description": "eco-friendly soccer ball with anti-slip grip.", "price": 41.74, "category": "Sports"}
+{"objectID": "266", "name": "Adjustable Resistance Bands", "description": "adjustable resistance bands with shock absorption.", "price": 90.09, "category": "Sports"}
+{"objectID": "267", "name": "High-Speed Bluetooth Speaker", "description": "high-speed bluetooth speaker with 4K resolution.", "price": 45.42, "category": "Electronics"}
+{"objectID": "268", "name": "RGB LED Desk Lamp", "description": "rgb led desk lamp with waterproof design.", "price": 114.41, "category": "Electronics"}
+{"objectID": "269", "name": "Eco-Friendly Cycling Helmet", "description": "eco-friendly cycling helmet with adjustable straps.", "price": 30.26, "category": "Sports"}
+{"objectID": "270", "name": "Adjustable Fitness Tracker", "description": "adjustable fitness tracker for home workouts.", "price": 80.12, "category": "Sports"}
+{"objectID": "271", "name": "Stainless Steel Hand Mixer", "description": "stainless steel hand mixer with programmable timer.", "price": 62.29, "category": "Home Appliances"}
+{"objectID": "272", "name": "Stainless Steel Blender", "description": "stainless steel blender for small kitchens.", "price": 119.37, "category": "Home Appliances"}
+{"objectID": "273", "name": "Portable Smart Watch", "description": "portable smart watch with long battery life.", "price": 178.06, "category": "Electronics"}
+{"objectID": "274", "name": "Durable Yoga Block", "description": "durable yoga block with adjustable straps.", "price": 17.96, "category": "Sports"}
+{"objectID": "275", "name": "Noise-Cancelling LED Desk Lamp", "description": "noise-cancelling led desk lamp with customizable buttons.", "price": 145.5, "category": "Electronics"}
+{"objectID": "276", "name": "Noise-Cancelling Portable Charger", "description": "noise-cancelling portable charger with 4K resolution.", "price": 66.29, "category": "Electronics"}
+{"objectID": "277", "name": "High-Performance Yoga Block", "description": "high-performance yoga block for all fitness levels.", "price": 163.64, "category": "Sports"}
+{"objectID": "278", "name": "Energy-Saving Electric Kettle", "description": "energy-saving electric kettle with multiple speed settings.", "price": 98.69, "category": "Home Appliances"}
+{"objectID": "279", "name": "Energy-Saving Food Processor", "description": "energy-saving food processor with 12-cup capacity.", "price": 87.67, "category": "Home Appliances"}
+{"objectID": "280", "name": "Wireless Portable Charger", "description": "wireless portable charger with multi-device connectivity.", "price": 96.8, "category": "Electronics"}
+{"objectID": "281", "name": "Automatic Rice Cooker", "description": "automatic rice cooker for small kitchens.", "price": 30.09, "category": "Home Appliances"}
+{"objectID": "282", "name": "Durable Dumbbell Set", "description": "durable dumbbell set with adjustable straps.", "price": 122.42, "category": "Sports"}
+{"objectID": "283", "name": "High-Performance Sports Water Bottle", "description": "high-performance sports water bottle for marathon training.", "price": 159.12, "category": "Sports"}
+{"objectID": "284", "name": "RGB Laptop Stand", "description": "rgb laptop stand with adjustable DPI.", "price": 45.18, "category": "Electronics"}
+{"objectID": "285", "name": "Lightweight Resistance Bands", "description": "lightweight resistance bands for all fitness levels.", "price": 16.15, "category": "Sports"}
+{"objectID": "286", "name": "Compact Steam Iron", "description": "compact steam iron with multiple speed settings.", "price": 173.51, "category": "Home Appliances"}
+{"objectID": "287", "name": "High-Speed Gaming Headset", "description": "high-speed gaming headset with fast charging.", "price": 37.11, "category": "Electronics"}
+{"objectID": "288", "name": "Energy-Saving Rice Cooker", "description": "energy-saving rice cooker for smoothies and soups.", "price": 76.93, "category": "Home Appliances"}
+{"objectID": "289", "name": "Eco-Friendly Yoga Mat", "description": "eco-friendly yoga mat for outdoor activities.", "price": 136.52, "category": "Sports"}
+{"objectID": "290", "name": "Compact Air Fryer", "description": "compact air fryer with easy-clean design.", "price": 30.92, "category": "Home Appliances"}
+{"objectID": "291", "name": "Fast-Boiling Waffle Maker", "description": "fast-boiling waffle maker with easy-clean design.", "price": 49.79, "category": "Home Appliances"}
+{"objectID": "292", "name": "Automatic Slow Cooker", "description": "automatic slow cooker with programmable timer.", "price": 48.31, "category": "Home Appliances"}
+{"objectID": "293", "name": "Stainless Steel Microwave", "description": "stainless steel microwave with auto shut-off.", "price": 52.45, "category": "Home Appliances"}
+{"objectID": "294", "name": "Breathable Gym Gloves", "description": "breathable gym gloves for home workouts.", "price": 17.34, "category": "Sports"}
+{"objectID": "295", "name": "Compact Toaster Oven", "description": "compact toaster oven with auto shut-off.", "price": 57.01, "category": "Home Appliances"}
+{"objectID": "296", "name": "RGB Bluetooth Speaker", "description": "rgb bluetooth speaker with surround sound.", "price": 186.74, "category": "Electronics"}
+{"objectID": "297", "name": "High-Performance Jump Rope", "description": "high-performance jump rope for outdoor activities.", "price": 114.13, "category": "Sports"}
+{"objectID": "298", "name": "Compact Steam Iron", "description": "compact steam iron with easy-clean design.", "price": 67.16, "category": "Home Appliances"}
+{"objectID": "299", "name": "Automatic Air Fryer", "description": "automatic air fryer for smoothies and soups.", "price": 22.06, "category": "Home Appliances"}
+{"objectID": "300", "name": "Eco-Friendly Running Shoes", "description": "eco-friendly running shoes with adjustable straps.", "price": 188.8, "category": "Sports"}
+{"objectID": "301", "name": "Programmable Juicer", "description": "programmable juicer for quick meals.", "price": 195.09, "category": "Home Appliances"}
+{"objectID": "302", "name": "Automatic Steam Iron", "description": "automatic steam iron with programmable timer.", "price": 120.98, "category": "Home Appliances"}
+{"objectID": "303", "name": "Adjustable Yoga Block", "description": "adjustable yoga block for outdoor activities.", "price": 32.7, "category": "Sports"}
+{"objectID": "304", "name": "High-Performance Cycling Helmet", "description": "high-performance cycling helmet made from eco-friendly materials.", "price": 44.93, "category": "Sports"}
+{"objectID": "305", "name": "Eco-Friendly Sports Water Bottle", "description": "eco-friendly sports water bottle for marathon training.", "price": 141.63, "category": "Sports"}
+{"objectID": "306", "name": "Lightweight Running Shoes", "description": "lightweight running shoes with anti-slip grip.", "price": 52.65, "category": "Sports"}
+{"objectID": "307", "name": "Durable Sports Water Bottle", "description": "durable sports water bottle for marathon training.", "price": 157.04, "category": "Sports"}
+{"objectID": "308", "name": "RGB USB-C Hub", "description": "rgb usb-c hub with long battery life.", "price": 190.85, "category": "Electronics"}
+{"objectID": "309", "name": "Compact Electric Kettle", "description": "compact electric kettle with multiple speed settings.", "price": 81.73, "category": "Home Appliances"}
+{"objectID": "310", "name": "Automatic Waffle Maker", "description": "automatic waffle maker for small kitchens.", "price": 198.46, "category": "Home Appliances"}
+{"objectID": "311", "name": "Eco-Friendly Yoga Mat", "description": "eco-friendly yoga mat for all fitness levels.", "price": 25.54, "category": "Sports"}
+{"objectID": "312", "name": "High-Performance Tennis Racket", "description": "high-performance tennis racket with anti-slip grip.", "price": 49.48, "category": "Sports"}
+{"objectID": "313", "name": "Wireless Bluetooth Speaker", "description": "wireless bluetooth speaker with 4K resolution.", "price": 73.07, "category": "Electronics"}
+{"objectID": "314", "name": "Durable Gym Gloves", "description": "durable gym gloves for outdoor activities.", "price": 92.75, "category": "Sports"}
+{"objectID": "315", "name": "Stainless Steel Vacuum Cleaner", "description": "stainless steel vacuum cleaner with programmable timer.", "price": 25.06, "category": "Home Appliances"}
+{"objectID": "316", "name": "Fast-Boiling Waffle Maker", "description": "fast-boiling waffle maker with multiple speed settings.", "price": 38.62, "category": "Home Appliances"}
+{"objectID": "317", "name": "High-Performance Tennis Racket", "description": "high-performance tennis racket for home workouts.", "price": 155.39, "category": "Sports"}
+{"objectID": "318", "name": "Ultra-Thin Bluetooth Speaker", "description": "ultra-thin bluetooth speaker with fast charging.", "price": 138.42, "category": "Electronics"}
+{"objectID": "319", "name": "Programmable Microwave", "description": "programmable microwave with auto shut-off.", "price": 29.36, "category": "Home Appliances"}
+{"objectID": "320", "name": "Ultra-Thin Gaming Mouse Pad", "description": "ultra-thin gaming mouse pad with customizable buttons.", "price": 160.54, "category": "Electronics"}
+{"objectID": "321", "name": "Noise-Cancelling USB-C Hub", "description": "noise-cancelling usb-c hub with waterproof design.", "price": 164.54, "category": "Electronics"}
+{"objectID": "322", "name": "Portable Bluetooth Speaker", "description": "portable bluetooth speaker with multi-device connectivity.", "price": 59.3, "category": "Electronics"}
+{"objectID": "323", "name": "Fast-Boiling Juicer", "description": "fast-boiling juicer for small kitchens.", "price": 60.98, "category": "Home Appliances"}
+{"objectID": "324", "name": "Fast-Boiling Electric Kettle", "description": "fast-boiling electric kettle with auto shut-off.", "price": 158.4, "category": "Home Appliances"}
+{"objectID": "325", "name": "High-Speed 4K Monitor", "description": "high-speed 4k monitor with multi-device connectivity.", "price": 137.89, "category": "Electronics"}
+{"objectID": "326", "name": "Ultra-Thin Gaming Headset", "description": "ultra-thin gaming headset with waterproof design.", "price": 35.04, "category": "Electronics"}
+{"objectID": "327", "name": "Ultra-Thin Smart Watch", "description": "ultra-thin smart watch with surround sound.", "price": 63.82, "category": "Electronics"}
+{"objectID": "328", "name": "Smart Portable Charger", "description": "smart portable charger with adjustable DPI.", "price": 118.89, "category": "Electronics"}
+{"objectID": "329", "name": "RGB Bluetooth Speaker", "description": "rgb bluetooth speaker with adjustable DPI.", "price": 13.3, "category": "Electronics"}
+{"objectID": "330", "name": "High-Speed USB-C Hub", "description": "high-speed usb-c hub with customizable buttons.", "price": 32.79, "category": "Electronics"}
+{"objectID": "331", "name": "Adjustable Soccer Ball", "description": "adjustable soccer ball for marathon training.", "price": 124.43, "category": "Sports"}
+{"objectID": "332", "name": "Non-Slip Kettlebell", "description": "non-slip kettlebell with adjustable straps.", "price": 20.15, "category": "Sports"}
+{"objectID": "333", "name": "Durable Tennis Racket", "description": "durable tennis racket with anti-slip grip.", "price": 120.86, "category": "Sports"}
+{"objectID": "334", "name": "High-Performance Dumbbell Set", "description": "high-performance dumbbell set with adjustable straps.", "price": 133.07, "category": "Sports"}
+{"objectID": "335", "name": "Automatic Electric Grill", "description": "automatic electric grill with programmable timer.", "price": 188.77, "category": "Home Appliances"}
+{"objectID": "336", "name": "Durable Yoga Mat", "description": "durable yoga mat with anti-slip grip.", "price": 27.68, "category": "Sports"}
+{"objectID": "337", "name": "Lightweight Tennis Racket", "description": "lightweight tennis racket for home workouts.", "price": 135.52, "category": "Sports"}
+{"objectID": "338", "name": "Breathable Soccer Ball", "description": "breathable soccer ball for all fitness levels.", "price": 91.07, "category": "Sports"}
+{"objectID": "339", "name": "Programmable Microwave", "description": "programmable microwave for smoothies and soups.", "price": 73.99, "category": "Home Appliances"}
+{"objectID": "340", "name": "Multi-Function Food Processor", "description": "multi-function food processor for smoothies and soups.", "price": 55.58, "category": "Home Appliances"}
+{"objectID": "341", "name": "Fast-Boiling Electric Grill", "description": "fast-boiling electric grill with programmable timer.", "price": 165.62, "category": "Home Appliances"}
+{"objectID": "342", "name": "Ergonomic External Hard Drive", "description": "ergonomic external hard drive with long battery life.", "price": 87.88, "category": "Electronics"}
+{"objectID": "343", "name": "Durable Soccer Ball", "description": "durable soccer ball with shock absorption.", "price": 142.6, "category": "Sports"}
+{"objectID": "344", "name": "Multi-Function Blender", "description": "multi-function blender with 12-cup capacity.", "price": 40.2, "category": "Home Appliances"}
+{"objectID": "345", "name": "Lightweight Treadmill Mat", "description": "lightweight treadmill mat with anti-slip grip.", "price": 153.45, "category": "Sports"}
+{"objectID": "346", "name": "High-Speed Gaming Headset", "description": "high-speed gaming headset with adjustable DPI.", "price": 43.83, "category": "Electronics"}
+{"objectID": "347", "name": "High-Performance Resistance Bands", "description": "high-performance resistance bands for home workouts.", "price": 92.7, "category": "Sports"}
+{"objectID": "348", "name": "RGB Gaming Mouse Pad", "description": "rgb gaming mouse pad with multi-device connectivity.", "price": 62.23, "category": "Electronics"}
+{"objectID": "349", "name": "Energy-Saving Toaster Oven", "description": "energy-saving toaster oven with multiple speed settings.", "price": 62.5, "category": "Home Appliances"}
+{"objectID": "350", "name": "Eco-Friendly Yoga Mat", "description": "eco-friendly yoga mat with adjustable straps.", "price": 127.31, "category": "Sports"}
+{"objectID": "351", "name": "Portable Wireless Earbuds", "description": "portable wireless earbuds with long battery life.", "price": 45.76, "category": "Electronics"}
+{"objectID": "352", "name": "Breathable Fitness Tracker", "description": "breathable fitness tracker for outdoor activities.", "price": 78.25, "category": "Sports"}
+{"objectID": "353", "name": "Wireless Bluetooth Speaker", "description": "wireless bluetooth speaker with multi-device connectivity.", "price": 62.89, "category": "Electronics"}
+{"objectID": "354", "name": "RGB Smartphone Holder", "description": "rgb smartphone holder with surround sound.", "price": 16.29, "category": "Electronics"}
+{"objectID": "355", "name": "Eco-Friendly Yoga Block", "description": "eco-friendly yoga block made from eco-friendly materials.", "price": 21.3, "category": "Sports"}
+{"objectID": "356", "name": "Stainless Steel Hand Mixer", "description": "stainless steel hand mixer for smoothies and soups.", "price": 70.99, "category": "Home Appliances"}
+{"objectID": "357", "name": "Energy-Saving Steam Iron", "description": "energy-saving steam iron with programmable timer.", "price": 97.64, "category": "Home Appliances"}
+{"objectID": "358", "name": "Lightweight Dumbbell Set", "description": "lightweight dumbbell set for outdoor activities.", "price": 145.6, "category": "Sports"}
+{"objectID": "359", "name": "Compact Waffle Maker", "description": "compact waffle maker with 12-cup capacity.", "price": 73.79, "category": "Home Appliances"}
+{"objectID": "360", "name": "Lightweight Cycling Helmet", "description": "lightweight cycling helmet for marathon training.", "price": 83.08, "category": "Sports"}
+{"objectID": "361", "name": "Ultra-Thin Mechanical Keyboard", "description": "ultra-thin mechanical keyboard with waterproof design.", "price": 154.47, "category": "Electronics"}
+{"objectID": "362", "name": "Breathable Dumbbell Set", "description": "breathable dumbbell set for home workouts.", "price": 27.64, "category": "Sports"}
+{"objectID": "363", "name": "Durable Cycling Helmet", "description": "durable cycling helmet for outdoor activities.", "price": 82.01, "category": "Sports"}
+{"objectID": "364", "name": "Fast-Boiling Microwave", "description": "fast-boiling microwave for quick meals.", "price": 196.27, "category": "Home Appliances"}
+{"objectID": "365", "name": "Ultra-Thin Smart Watch", "description": "ultra-thin smart watch with 4K resolution.", "price": 163.37, "category": "Electronics"}
+{"objectID": "366", "name": "High-Performance Resistance Bands", "description": "high-performance resistance bands for outdoor activities.", "price": 24.59, "category": "Sports"}
+{"objectID": "367", "name": "Durable Fitness Tracker", "description": "durable fitness tracker for all fitness levels.", "price": 51.16, "category": "Sports"}
+{"objectID": "368", "name": "Programmable Vacuum Cleaner", "description": "programmable vacuum cleaner with programmable timer.", "price": 30.35, "category": "Home Appliances"}
+{"objectID": "369", "name": "Multi-Function Microwave", "description": "multi-function microwave with multiple speed settings.", "price": 64.05, "category": "Home Appliances"}
+{"objectID": "370", "name": "Compact Vacuum Cleaner", "description": "compact vacuum cleaner with multiple speed settings.", "price": 65.7, "category": "Home Appliances"}
+{"objectID": "371", "name": "RGB Gaming Mouse Pad", "description": "rgb gaming mouse pad with multi-device connectivity.", "price": 32.95, "category": "Electronics"}
+{"objectID": "372", "name": "Energy-Saving Slow Cooker", "description": "energy-saving slow cooker with programmable timer.", "price": 127.64, "category": "Home Appliances"}
+{"objectID": "373", "name": "Lightweight Kettlebell", "description": "lightweight kettlebell for marathon training.", "price": 96.45, "category": "Sports"}
+{"objectID": "374", "name": "Ergonomic Mechanical Keyboard", "description": "ergonomic mechanical keyboard with adjustable DPI.", "price": 196.58, "category": "Electronics"}
+{"objectID": "375", "name": "Multi-Function Air Fryer", "description": "multi-function air fryer with 12-cup capacity.", "price": 150.61, "category": "Home Appliances"}
+{"objectID": "376", "name": "RGB 4K Monitor", "description": "rgb 4k monitor with fast charging.", "price": 94.44, "category": "Electronics"}
+{"objectID": "377", "name": "Automatic Steam Iron", "description": "automatic steam iron with multiple speed settings.", "price": 45.25, "category": "Home Appliances"}
+{"objectID": "378", "name": "Smart LED Desk Lamp", "description": "smart led desk lamp with multi-device connectivity.", "price": 135.01, "category": "Electronics"}
+{"objectID": "379", "name": "High-Performance Kettlebell", "description": "high-performance kettlebell made from eco-friendly materials.", "price": 194.89, "category": "Sports"}
+{"objectID": "380", "name": "Portable Bluetooth Speaker", "description": "portable bluetooth speaker with surround sound.", "price": 82.65, "category": "Electronics"}
+{"objectID": "381", "name": "Stainless Steel Slow Cooker", "description": "stainless steel slow cooker with easy-clean design.", "price": 61.72, "category": "Home Appliances"}
+{"objectID": "382", "name": "Ultra-Thin Smartphone Holder", "description": "ultra-thin smartphone holder with surround sound.", "price": 58.46, "category": "Electronics"}
+{"objectID": "383", "name": "Ergonomic Laptop Stand", "description": "ergonomic laptop stand with multi-device connectivity.", "price": 196.28, "category": "Electronics"}
+{"objectID": "384", "name": "Wireless Smartphone Holder", "description": "wireless smartphone holder with fast charging.", "price": 93.77, "category": "Electronics"}
+{"objectID": "385", "name": "RGB Wireless Mouse", "description": "rgb wireless mouse with fast charging.", "price": 113.94, "category": "Electronics"}
+{"objectID": "386", "name": "Automatic Electric Grill", "description": "automatic electric grill with easy-clean design.", "price": 190.72, "category": "Home Appliances"}
+{"objectID": "387", "name": "Non-Slip Gym Gloves", "description": "non-slip gym gloves with adjustable straps.", "price": 188.36, "category": "Sports"}
+{"objectID": "388", "name": "Breathable Running Shoes", "description": "breathable running shoes with adjustable straps.", "price": 140.86, "category": "Sports"}
+{"objectID": "389", "name": "Multi-Function Coffee Maker", "description": "multi-function coffee maker with 12-cup capacity.", "price": 107.45, "category": "Home Appliances"}
+{"objectID": "390", "name": "RGB Wireless Earbuds", "description": "rgb wireless earbuds with waterproof design.", "price": 34.71, "category": "Electronics"}
+{"objectID": "391", "name": "Noise-Cancelling Portable Charger", "description": "noise-cancelling portable charger with 4K resolution.", "price": 159.34, "category": "Electronics"}
+{"objectID": "392", "name": "Breathable Resistance Bands", "description": "breathable resistance bands for outdoor activities.", "price": 119.67, "category": "Sports"}
+{"objectID": "393", "name": "Smart Wireless Mouse", "description": "smart wireless mouse with surround sound.", "price": 66.74, "category": "Electronics"}
+{"objectID": "394", "name": "Breathable Treadmill Mat", "description": "breathable treadmill mat with anti-slip grip.", "price": 149.01, "category": "Sports"}
+{"objectID": "395", "name": "Automatic Blender", "description": "automatic blender with easy-clean design.", "price": 125.21, "category": "Home Appliances"}
+{"objectID": "396", "name": "High-Speed Mechanical Keyboard", "description": "high-speed mechanical keyboard with multi-device connectivity.", "price": 196.0, "category": "Electronics"}
+{"objectID": "397", "name": "Energy-Saving Microwave", "description": "energy-saving microwave with programmable timer.", "price": 159.09, "category": "Home Appliances"}
+{"objectID": "398", "name": "Lightweight Yoga Block", "description": "lightweight yoga block for home workouts.", "price": 45.89, "category": "Sports"}
+{"objectID": "399", "name": "Lightweight Soccer Ball", "description": "lightweight soccer ball made from eco-friendly materials.", "price": 42.59, "category": "Sports"}
+{"objectID": "400", "name": "Programmable Vacuum Cleaner", "description": "programmable vacuum cleaner with 12-cup capacity.", "price": 90.28, "category": "Home Appliances"}
+{"objectID": "401", "name": "Smart External Hard Drive", "description": "smart external hard drive with waterproof design.", "price": 64.29, "category": "Electronics"}
+{"objectID": "402", "name": "Portable Webcam", "description": "portable webcam with 4K resolution.", "price": 70.64, "category": "Electronics"}
+{"objectID": "403", "name": "Multi-Function Microwave", "description": "multi-function microwave with easy-clean design.", "price": 111.32, "category": "Home Appliances"}
+{"objectID": "404", "name": "Automatic Waffle Maker", "description": "automatic waffle maker with auto shut-off.", "price": 86.2, "category": "Home Appliances"}
+{"objectID": "405", "name": "Wireless External Hard Drive", "description": "wireless external hard drive with fast charging.", "price": 42.21, "category": "Electronics"}
+{"objectID": "406", "name": "High-Performance Cycling Helmet", "description": "high-performance cycling helmet with adjustable straps.", "price": 32.05, "category": "Sports"}
+{"objectID": "407", "name": "Automatic Electric Kettle", "description": "automatic electric kettle with programmable timer.", "price": 154.97, "category": "Home Appliances"}
+{"objectID": "408", "name": "High-Performance Yoga Block", "description": "high-performance yoga block for all fitness levels.", "price": 88.07, "category": "Sports"}
+{"objectID": "409", "name": "Compact Electric Grill", "description": "compact electric grill for small kitchens.", "price": 129.46, "category": "Home Appliances"}
+{"objectID": "410", "name": "Energy-Saving Air Fryer", "description": "energy-saving air fryer for quick meals.", "price": 72.74, "category": "Home Appliances"}
+{"objectID": "411", "name": "Adjustable Treadmill Mat", "description": "adjustable treadmill mat for home workouts.", "price": 101.07, "category": "Sports"}
+{"objectID": "412", "name": "Ultra-Thin Smart Watch", "description": "ultra-thin smart watch with fast charging.", "price": 39.7, "category": "Electronics"}
+{"objectID": "413", "name": "Multi-Function Slow Cooker", "description": "multi-function slow cooker for small kitchens.", "price": 17.09, "category": "Home Appliances"}
+{"objectID": "414", "name": "Breathable Jump Rope", "description": "breathable jump rope with anti-slip grip.", "price": 137.04, "category": "Sports"}
+{"objectID": "415", "name": "Wireless Gaming Headset", "description": "wireless gaming headset with customizable buttons.", "price": 126.85, "category": "Electronics"}
+{"objectID": "416", "name": "Breathable Jump Rope", "description": "breathable jump rope for marathon training.", "price": 123.78, "category": "Sports"}
+{"objectID": "417", "name": "Lightweight Cycling Helmet", "description": "lightweight cycling helmet for home workouts.", "price": 102.64, "category": "Sports"}
+{"objectID": "418", "name": "RGB LED Desk Lamp", "description": "rgb led desk lamp with multi-device connectivity.", "price": 80.45, "category": "Electronics"}
+{"objectID": "419", "name": "Portable 4K Monitor", "description": "portable 4k monitor with adjustable DPI.", "price": 113.19, "category": "Electronics"}
+{"objectID": "420", "name": "High-Performance Cycling Helmet", "description": "high-performance cycling helmet for outdoor activities.", "price": 45.55, "category": "Sports"}
+{"objectID": "421", "name": "Fast-Boiling Steam Iron", "description": "fast-boiling steam iron with multiple speed settings.", "price": 79.02, "category": "Home Appliances"}
+{"objectID": "422", "name": "High-Performance Soccer Ball", "description": "high-performance soccer ball for outdoor activities.", "price": 154.9, "category": "Sports"}
+{"objectID": "423", "name": "Programmable Blender", "description": "programmable blender with 12-cup capacity.", "price": 91.22, "category": "Home Appliances"}
+{"objectID": "424", "name": "Stainless Steel Steam Iron", "description": "stainless steel steam iron with programmable timer.", "price": 18.3, "category": "Home Appliances"}
+{"objectID": "425", "name": "High-Performance Kettlebell", "description": "high-performance kettlebell for marathon training.", "price": 128.49, "category": "Sports"}
+{"objectID": "426", "name": "RGB LED Desk Lamp", "description": "rgb led desk lamp with waterproof design.", "price": 125.49, "category": "Electronics"}
+{"objectID": "427", "name": "Eco-Friendly Dumbbell Set", "description": "eco-friendly dumbbell set with adjustable straps.", "price": 58.67, "category": "Sports"}
+{"objectID": "428", "name": "Stainless Steel Hand Mixer", "description": "stainless steel hand mixer for small kitchens.", "price": 186.73, "category": "Home Appliances"}
+{"objectID": "429", "name": "Noise-Cancelling USB-C Hub", "description": "noise-cancelling usb-c hub with 4K resolution.", "price": 51.35, "category": "Electronics"}
+{"objectID": "430", "name": "Ultra-Thin Webcam", "description": "ultra-thin webcam with 4K resolution.", "price": 197.46, "category": "Electronics"}
+{"objectID": "431", "name": "Portable USB-C Hub", "description": "portable usb-c hub with surround sound.", "price": 19.31, "category": "Electronics"}
+{"objectID": "432", "name": "Wireless Smartphone Holder", "description": "wireless smartphone holder with waterproof design.", "price": 182.49, "category": "Electronics"}
+{"objectID": "433", "name": "High-Speed LED Desk Lamp", "description": "high-speed led desk lamp with long battery life.", "price": 149.05, "category": "Electronics"}
+{"objectID": "434", "name": "Adjustable Fitness Tracker", "description": "adjustable fitness tracker made from eco-friendly materials.", "price": 150.37, "category": "Sports"}
+{"objectID": "435", "name": "Lightweight Running Shoes", "description": "lightweight running shoes with adjustable straps.", "price": 168.17, "category": "Sports"}
+{"objectID": "436", "name": "Noise-Cancelling Mechanical Keyboard", "description": "noise-cancelling mechanical keyboard with long battery life.", "price": 98.05, "category": "Electronics"}
+{"objectID": "437", "name": "High-Speed Smartphone Holder", "description": "high-speed smartphone holder with fast charging.", "price": 183.91, "category": "Electronics"}
+{"objectID": "438", "name": "Lightweight Gym Gloves", "description": "lightweight gym gloves for outdoor activities.", "price": 77.69, "category": "Sports"}
+{"objectID": "439", "name": "Durable Treadmill Mat", "description": "durable treadmill mat with shock absorption.", "price": 144.29, "category": "Sports"}
+{"objectID": "440", "name": "Multi-Function Coffee Maker", "description": "multi-function coffee maker for quick meals.", "price": 63.21, "category": "Home Appliances"}
+{"objectID": "441", "name": "Durable Yoga Block", "description": "durable yoga block with shock absorption.", "price": 111.06, "category": "Sports"}
+{"objectID": "442", "name": "High-Performance Fitness Tracker", "description": "high-performance fitness tracker with anti-slip grip.", "price": 123.79, "category": "Sports"}
+{"objectID": "443", "name": "Breathable Yoga Block", "description": "breathable yoga block with anti-slip grip.", "price": 189.61, "category": "Sports"}
+{"objectID": "444", "name": "Multi-Function Steam Iron", "description": "multi-function steam iron with multiple speed settings.", "price": 84.6, "category": "Home Appliances"}
+{"objectID": "445", "name": "High-Speed Gaming Mouse Pad", "description": "high-speed gaming mouse pad with 4K resolution.", "price": 195.98, "category": "Electronics"}
+{"objectID": "446", "name": "Non-Slip Jump Rope", "description": "non-slip jump rope for outdoor activities.", "price": 183.28, "category": "Sports"}
+{"objectID": "447", "name": "Adjustable Sports Water Bottle", "description": "adjustable sports water bottle with shock absorption.", "price": 24.72, "category": "Sports"}
+{"objectID": "448", "name": "Durable Soccer Ball", "description": "durable soccer ball for marathon training.", "price": 113.9, "category": "Sports"}
+{"objectID": "449", "name": "Wireless 4K Monitor", "description": "wireless 4k monitor with adjustable DPI.", "price": 77.82, "category": "Electronics"}
+{"objectID": "450", "name": "High-Performance Fitness Tracker", "description": "high-performance fitness tracker with anti-slip grip.", "price": 110.31, "category": "Sports"}
+{"objectID": "451", "name": "Breathable Tennis Racket", "description": "breathable tennis racket for all fitness levels.", "price": 74.74, "category": "Sports"}
+{"objectID": "452", "name": "High-Speed Wireless Earbuds", "description": "high-speed wireless earbuds with waterproof design.", "price": 14.63, "category": "Electronics"}
+{"objectID": "453", "name": "Stainless Steel Waffle Maker", "description": "stainless steel waffle maker for quick meals.", "price": 81.5, "category": "Home Appliances"}
+{"objectID": "454", "name": "Non-Slip Fitness Tracker", "description": "non-slip fitness tracker with shock absorption.", "price": 165.62, "category": "Sports"}
+{"objectID": "455", "name": "Portable Portable Charger", "description": "portable portable charger with customizable buttons.", "price": 32.61, "category": "Electronics"}
+{"objectID": "456", "name": "High-Speed External Hard Drive", "description": "high-speed external hard drive with long battery life.", "price": 30.06, "category": "Electronics"}
+{"objectID": "457", "name": "Breathable Yoga Block", "description": "breathable yoga block for all fitness levels.", "price": 147.88, "category": "Sports"}
+{"objectID": "458", "name": "High-Performance Sports Water Bottle", "description": "high-performance sports water bottle for outdoor activities.", "price": 116.41, "category": "Sports"}
+{"objectID": "459", "name": "Energy-Saving Juicer", "description": "energy-saving juicer with auto shut-off.", "price": 162.85, "category": "Home Appliances"}
+{"objectID": "460", "name": "Non-Slip Kettlebell", "description": "non-slip kettlebell made from eco-friendly materials.", "price": 38.89, "category": "Sports"}
+{"objectID": "461", "name": "Stainless Steel Microwave", "description": "stainless steel microwave with easy-clean design.", "price": 132.9, "category": "Home Appliances"}
+{"objectID": "462", "name": "High-Performance Cycling Helmet", "description": "high-performance cycling helmet with anti-slip grip.", "price": 159.13, "category": "Sports"}
+{"objectID": "463", "name": "High-Performance Basketball", "description": "high-performance basketball with anti-slip grip.", "price": 69.89, "category": "Sports"}
+{"objectID": "464", "name": "Ultra-Thin 4K Monitor", "description": "ultra-thin 4k monitor with adjustable DPI.", "price": 83.16, "category": "Electronics"}
+{"objectID": "465", "name": "High-Performance Sports Water Bottle", "description": "high-performance sports water bottle for home workouts.", "price": 182.04, "category": "Sports"}
+{"objectID": "466", "name": "Compact Toaster Oven", "description": "compact toaster oven for quick meals.", "price": 155.03, "category": "Home Appliances"}
+{"objectID": "467", "name": "Stainless Steel Toaster Oven", "description": "stainless steel toaster oven with auto shut-off.", "price": 114.17, "category": "Home Appliances"}
+{"objectID": "468", "name": "Noise-Cancelling Gaming Mouse Pad", "description": "noise-cancelling gaming mouse pad with 4K resolution.", "price": 168.75, "category": "Electronics"}
+{"objectID": "469", "name": "Durable Gym Gloves", "description": "durable gym gloves with anti-slip grip.", "price": 163.29, "category": "Sports"}
+{"objectID": "470", "name": "Automatic Coffee Maker", "description": "automatic coffee maker for small kitchens.", "price": 165.98, "category": "Home Appliances"}
+{"objectID": "471", "name": "Energy-Saving Electric Grill", "description": "energy-saving electric grill with easy-clean design.", "price": 92.83, "category": "Home Appliances"}
+{"objectID": "472", "name": "Ergonomic External Hard Drive", "description": "ergonomic external hard drive with surround sound.", "price": 170.87, "category": "Electronics"}
+{"objectID": "473", "name": "Ergonomic USB-C Hub", "description": "ergonomic usb-c hub with long battery life.", "price": 176.73, "category": "Electronics"}
+{"objectID": "474", "name": "RGB Wireless Earbuds", "description": "rgb wireless earbuds with surround sound.", "price": 80.8, "category": "Electronics"}
+{"objectID": "475", "name": "Portable External Hard Drive", "description": "portable external hard drive with customizable buttons.", "price": 123.3, "category": "Electronics"}
+{"objectID": "476", "name": "High-Speed Mechanical Keyboard", "description": "high-speed mechanical keyboard with multi-device connectivity.", "price": 163.56, "category": "Electronics"}
+{"objectID": "477", "name": "Noise-Cancelling Bluetooth Speaker", "description": "noise-cancelling bluetooth speaker with long battery life.", "price": 161.69, "category": "Electronics"}
+{"objectID": "478", "name": "Adjustable Gym Gloves", "description": "adjustable gym gloves for all fitness levels.", "price": 13.84, "category": "Sports"}
+{"objectID": "479", "name": "Fast-Boiling Food Processor", "description": "fast-boiling food processor with programmable timer.", "price": 47.59, "category": "Home Appliances"}
+{"objectID": "480", "name": "Energy-Saving Slow Cooker", "description": "energy-saving slow cooker for small kitchens.", "price": 178.33, "category": "Home Appliances"}
+{"objectID": "481", "name": "Durable Gym Gloves", "description": "durable gym gloves for all fitness levels.", "price": 195.08, "category": "Sports"}
+{"objectID": "482", "name": "High-Performance Kettlebell", "description": "high-performance kettlebell for home workouts.", "price": 112.47, "category": "Sports"}
+{"objectID": "483", "name": "Fast-Boiling Hand Mixer", "description": "fast-boiling hand mixer with easy-clean design.", "price": 96.7, "category": "Home Appliances"}
+{"objectID": "484", "name": "High-Speed Laptop Stand", "description": "high-speed laptop stand with waterproof design.", "price": 73.85, "category": "Electronics"}
+{"objectID": "485", "name": "Eco-Friendly Tennis Racket", "description": "eco-friendly tennis racket with adjustable straps.", "price": 91.05, "category": "Sports"}
+{"objectID": "486", "name": "Portable 4K Monitor", "description": "portable 4k monitor with waterproof design.", "price": 198.57, "category": "Electronics"}
+{"objectID": "487", "name": "Noise-Cancelling Gaming Mouse Pad", "description": "noise-cancelling gaming mouse pad with surround sound.", "price": 44.97, "category": "Electronics"}
+{"objectID": "488", "name": "Portable Smartphone Holder", "description": "portable smartphone holder with multi-device connectivity.", "price": 151.15, "category": "Electronics"}
+{"objectID": "489", "name": "Lightweight Gym Gloves", "description": "lightweight gym gloves with anti-slip grip.", "price": 95.36, "category": "Sports"}
+{"objectID": "490", "name": "High-Performance Basketball", "description": "high-performance basketball for all fitness levels.", "price": 54.17, "category": "Sports"}
+{"objectID": "491", "name": "Adjustable Basketball", "description": "adjustable basketball with adjustable straps.", "price": 91.93, "category": "Sports"}
+{"objectID": "492", "name": "Durable Gym Gloves", "description": "durable gym gloves for home workouts.", "price": 49.76, "category": "Sports"}
+{"objectID": "493", "name": "High-Performance Soccer Ball", "description": "high-performance soccer ball with adjustable straps.", "price": 30.82, "category": "Sports"}
+{"objectID": "494", "name": "Energy-Saving Microwave", "description": "energy-saving microwave with multiple speed settings.", "price": 104.73, "category": "Home Appliances"}
+{"objectID": "495", "name": "Portable 4K Monitor", "description": "portable 4k monitor with fast charging.", "price": 183.53, "category": "Electronics"}
+{"objectID": "496", "name": "Non-Slip Sports Water Bottle", "description": "non-slip sports water bottle with shock absorption.", "price": 159.5, "category": "Sports"}
+{"objectID": "497", "name": "Wireless Mechanical Keyboard", "description": "wireless mechanical keyboard with long battery life.", "price": 60.33, "category": "Electronics"}
+{"objectID": "498", "name": "Stainless Steel Food Processor", "description": "stainless steel food processor with 12-cup capacity.", "price": 52.98, "category": "Home Appliances"}
+{"objectID": "499", "name": "Ergonomic 4K Monitor", "description": "ergonomic 4k monitor with customizable buttons.", "price": 109.47, "category": "Electronics"}
+
+
+
+
+
+
+
+
+
+
+
+
+
+### Upsert 1000 test products to /data/products using NDJSON and create indexes for objectID, name, description, category
+POST http://127.0.0.1:8080/data/products
+Content-Type: application/x-ndjson
+X-Upsert-Field: objectID,name,description,category,price
+
+{"objectID": "500", "name": "Adjustable Kettlebell", "description": "adjustable kettlebell with anti-slip grip.", "price": 85.2, "category": "Sports"}
+{"objectID": "501", "name": "Noise-Cancelling External Hard Drive", "description": "noise-cancelling external hard drive with 4K resolution.", "price": 173.8, "category": "Electronics"}
+{"objectID": "502", "name": "Ergonomic 4K Monitor", "description": "ergonomic 4k monitor with waterproof design.", "price": 32.52, "category": "Electronics"}
+{"objectID": "503", "name": "Noise-Cancelling Mechanical Keyboard", "description": "noise-cancelling mechanical keyboard with waterproof design.", "price": 197.17, "category": "Electronics"}
+{"objectID": "504", "name": "Durable Running Shoes", "description": "durable running shoes made from eco-friendly materials.", "price": 148.02, "category": "Sports"}
+{"objectID": "505", "name": "RGB USB-C Hub", "description": "rgb usb-c hub with fast charging.", "price": 23.96, "category": "Electronics"}
+{"objectID": "506", "name": "Breathable Resistance Bands", "description": "breathable resistance bands made from eco-friendly materials.", "price": 54.63, "category": "Sports"}
+{"objectID": "507", "name": "Adjustable Running Shoes", "description": "adjustable running shoes with adjustable straps.", "price": 27.06, "category": "Sports"}
+{"objectID": "508", "name": "Multi-Function Waffle Maker", "description": "multi-function waffle maker with multiple speed settings.", "price": 199.62, "category": "Home Appliances"}
+{"objectID": "509", "name": "Ergonomic Gaming Mouse Pad", "description": "ergonomic gaming mouse pad with multi-device connectivity.", "price": 28.05, "category": "Electronics"}
+{"objectID": "510", "name": "Energy-Saving Juicer", "description": "energy-saving juicer with 12-cup capacity.", "price": 87.03, "category": "Home Appliances"}
+{"objectID": "511", "name": "Stainless Steel Hand Mixer", "description": "stainless steel hand mixer with programmable timer.", "price": 180.4, "category": "Home Appliances"}
+{"objectID": "512", "name": "Fast-Boiling Blender", "description": "fast-boiling blender with multiple speed settings.", "price": 148.13, "category": "Home Appliances"}
+{"objectID": "513", "name": "Non-Slip Tennis Racket", "description": "non-slip tennis racket with anti-slip grip.", "price": 79.69, "category": "Sports"}
+{"objectID": "514", "name": "Multi-Function Coffee Maker", "description": "multi-function coffee maker with programmable timer.", "price": 177.64, "category": "Home Appliances"}
+{"objectID": "515", "name": "Stainless Steel Waffle Maker", "description": "stainless steel waffle maker for small kitchens.", "price": 36.61, "category": "Home Appliances"}
+{"objectID": "516", "name": "Eco-Friendly Sports Water Bottle", "description": "eco-friendly sports water bottle with adjustable straps.", "price": 17.7, "category": "Sports"}
+{"objectID": "517", "name": "Noise-Cancelling Wireless Earbuds", "description": "noise-cancelling wireless earbuds with surround sound.", "price": 183.35, "category": "Electronics"}
+{"objectID": "518", "name": "High-Speed USB-C Hub", "description": "high-speed usb-c hub with surround sound.", "price": 138.8, "category": "Electronics"}
+{"objectID": "519", "name": "Multi-Function Coffee Maker", "description": "multi-function coffee maker with easy-clean design.", "price": 143.07, "category": "Home Appliances"}
+{"objectID": "520", "name": "Automatic Toaster Oven", "description": "automatic toaster oven with auto shut-off.", "price": 58.76, "category": "Home Appliances"}
+{"objectID": "521", "name": "Lightweight Resistance Bands", "description": "lightweight resistance bands for marathon training.", "price": 67.45, "category": "Sports"}
+{"objectID": "522", "name": "Adjustable Soccer Ball", "description": "adjustable soccer ball with shock absorption.", "price": 135.94, "category": "Sports"}
+{"objectID": "523", "name": "Ultra-Thin Wireless Earbuds", "description": "ultra-thin wireless earbuds with customizable buttons.", "price": 151.21, "category": "Electronics"}
+{"objectID": "524", "name": "Ultra-Thin Bluetooth Speaker", "description": "ultra-thin bluetooth speaker with adjustable DPI.", "price": 195.94, "category": "Electronics"}
+{"objectID": "525", "name": "Ultra-Thin Mechanical Keyboard", "description": "ultra-thin mechanical keyboard with fast charging.", "price": 137.75, "category": "Electronics"}
+{"objectID": "526", "name": "Durable Yoga Block", "description": "durable yoga block with adjustable straps.", "price": 42.54, "category": "Sports"}
+{"objectID": "527", "name": "Ultra-Thin External Hard Drive", "description": "ultra-thin external hard drive with adjustable DPI.", "price": 75.64, "category": "Electronics"}
+{"objectID": "528", "name": "Adjustable Running Shoes", "description": "adjustable running shoes with adjustable straps.", "price": 118.04, "category": "Sports"}
+{"objectID": "529", "name": "High-Speed LED Desk Lamp", "description": "high-speed led desk lamp with surround sound.", "price": 95.38, "category": "Electronics"}
+{"objectID": "530", "name": "Compact Hand Mixer", "description": "compact hand mixer with easy-clean design.", "price": 118.97, "category": "Home Appliances"}
+{"objectID": "531", "name": "Durable Resistance Bands", "description": "durable resistance bands for home workouts.", "price": 137.99, "category": "Sports"}
+{"objectID": "532", "name": "Durable Tennis Racket", "description": "durable tennis racket made from eco-friendly materials.", "price": 163.2, "category": "Sports"}
+{"objectID": "533", "name": "Programmable Toaster Oven", "description": "programmable toaster oven with multiple speed settings.", "price": 108.48, "category": "Home Appliances"}
+{"objectID": "534", "name": "Durable Cycling Helmet", "description": "durable cycling helmet with adjustable straps.", "price": 57.96, "category": "Sports"}
+{"objectID": "535", "name": "Eco-Friendly Gym Gloves", "description": "eco-friendly gym gloves for outdoor activities.", "price": 49.25, "category": "Sports"}
+{"objectID": "536", "name": "Non-Slip Yoga Block", "description": "non-slip yoga block for all fitness levels.", "price": 41.55, "category": "Sports"}
+{"objectID": "537", "name": "Breathable Gym Gloves", "description": "breathable gym gloves for all fitness levels.", "price": 47.31, "category": "Sports"}
+{"objectID": "538", "name": "Energy-Saving Slow Cooker", "description": "energy-saving slow cooker with easy-clean design.", "price": 182.77, "category": "Home Appliances"}
+{"objectID": "539", "name": "Durable Yoga Mat", "description": "durable yoga mat with shock absorption.", "price": 76.89, "category": "Sports"}
+{"objectID": "540", "name": "Fast-Boiling Food Processor", "description": "fast-boiling food processor for small kitchens.", "price": 97.61, "category": "Home Appliances"}
+{"objectID": "541", "name": "Energy-Saving Toaster Oven", "description": "energy-saving toaster oven with multiple speed settings.", "price": 162.99, "category": "Home Appliances"}
+{"objectID": "542", "name": "Lightweight Yoga Mat", "description": "lightweight yoga mat made from eco-friendly materials.", "price": 43.21, "category": "Sports"}
+{"objectID": "543", "name": "High-Performance Cycling Helmet", "description": "high-performance cycling helmet for marathon training.", "price": 197.61, "category": "Sports"}
+{"objectID": "544", "name": "High-Performance Cycling Helmet", "description": "high-performance cycling helmet made from eco-friendly materials.", "price": 103.44, "category": "Sports"}
+{"objectID": "545", "name": "Durable Dumbbell Set", "description": "durable dumbbell set for all fitness levels.", "price": 157.71, "category": "Sports"}
+{"objectID": "546", "name": "Automatic Food Processor", "description": "automatic food processor with multiple speed settings.", "price": 196.53, "category": "Home Appliances"}
+{"objectID": "547", "name": "Energy-Saving Juicer", "description": "energy-saving juicer with auto shut-off.", "price": 168.78, "category": "Home Appliances"}
+{"objectID": "548", "name": "Programmable Steam Iron", "description": "programmable steam iron for smoothies and soups.", "price": 119.11, "category": "Home Appliances"}
+{"objectID": "549", "name": "Multi-Function Microwave", "description": "multi-function microwave for smoothies and soups.", "price": 102.29, "category": "Home Appliances"}
+{"objectID": "550", "name": "Eco-Friendly Sports Water Bottle", "description": "eco-friendly sports water bottle for outdoor activities.", "price": 50.0, "category": "Sports"}
+{"objectID": "551", "name": "Lightweight Running Shoes", "description": "lightweight running shoes for all fitness levels.", "price": 97.64, "category": "Sports"}
+{"objectID": "552", "name": "High-Performance Basketball", "description": "high-performance basketball for home workouts.", "price": 53.88, "category": "Sports"}
+{"objectID": "553", "name": "Adjustable Sports Water Bottle", "description": "adjustable sports water bottle for home workouts.", "price": 67.44, "category": "Sports"}
+{"objectID": "554", "name": "High-Speed Smart Watch", "description": "high-speed smart watch with long battery life.", "price": 168.52, "category": "Electronics"}
+{"objectID": "555", "name": "Lightweight Fitness Tracker", "description": "lightweight fitness tracker for outdoor activities.", "price": 51.88, "category": "Sports"}
+{"objectID": "556", "name": "Energy-Saving Food Processor", "description": "energy-saving food processor with 12-cup capacity.", "price": 146.93, "category": "Home Appliances"}
+{"objectID": "557", "name": "High-Speed Bluetooth Speaker", "description": "high-speed bluetooth speaker with waterproof design.", "price": 12.39, "category": "Electronics"}
+{"objectID": "558", "name": "High-Speed Wireless Mouse", "description": "high-speed wireless mouse with customizable buttons.", "price": 191.66, "category": "Electronics"}
+{"objectID": "559", "name": "Compact Steam Iron", "description": "compact steam iron with multiple speed settings.", "price": 97.48, "category": "Home Appliances"}
+{"objectID": "560", "name": "Lightweight Kettlebell", "description": "lightweight kettlebell with shock absorption.", "price": 75.05, "category": "Sports"}
+{"objectID": "561", "name": "High-Performance Kettlebell", "description": "high-performance kettlebell for outdoor activities.", "price": 39.04, "category": "Sports"}
+{"objectID": "562", "name": "Breathable Cycling Helmet", "description": "breathable cycling helmet for all fitness levels.", "price": 91.05, "category": "Sports"}
+{"objectID": "563", "name": "Energy-Saving Electric Grill", "description": "energy-saving electric grill for small kitchens.", "price": 52.36, "category": "Home Appliances"}
+{"objectID": "564", "name": "Lightweight Gym Gloves", "description": "lightweight gym gloves with adjustable straps.", "price": 137.99, "category": "Sports"}
+{"objectID": "565", "name": "High-Performance Yoga Mat", "description": "high-performance yoga mat for marathon training.", "price": 18.73, "category": "Sports"}
+{"objectID": "566", "name": "Stainless Steel Toaster Oven", "description": "stainless steel toaster oven with programmable timer.", "price": 18.48, "category": "Home Appliances"}
+{"objectID": "567", "name": "Ultra-Thin USB-C Hub", "description": "ultra-thin usb-c hub with 4K resolution.", "price": 79.42, "category": "Electronics"}
+{"objectID": "568", "name": "Durable Yoga Block", "description": "durable yoga block for outdoor activities.", "price": 136.8, "category": "Sports"}
+{"objectID": "569", "name": "Noise-Cancelling Laptop Stand", "description": "noise-cancelling laptop stand with fast charging.", "price": 117.34, "category": "Electronics"}
+{"objectID": "570", "name": "Portable Gaming Mouse Pad", "description": "portable gaming mouse pad with customizable buttons.", "price": 75.24, "category": "Electronics"}
+{"objectID": "571", "name": "Ergonomic Laptop Stand", "description": "ergonomic laptop stand with adjustable DPI.", "price": 19.05, "category": "Electronics"}
+{"objectID": "572", "name": "Automatic Toaster Oven", "description": "automatic toaster oven with easy-clean design.", "price": 46.65, "category": "Home Appliances"}
+{"objectID": "573", "name": "Ultra-Thin Smartphone Holder", "description": "ultra-thin smartphone holder with waterproof design.", "price": 127.39, "category": "Electronics"}
+{"objectID": "574", "name": "Fast-Boiling Slow Cooker", "description": "fast-boiling slow cooker with programmable timer.", "price": 54.58, "category": "Home Appliances"}
+{"objectID": "575", "name": "Breathable Yoga Mat", "description": "breathable yoga mat for marathon training.", "price": 70.19, "category": "Sports"}
+{"objectID": "576", "name": "Lightweight Tennis Racket", "description": "lightweight tennis racket for all fitness levels.", "price": 119.89, "category": "Sports"}
+{"objectID": "577", "name": "Stainless Steel Blender", "description": "stainless steel blender with auto shut-off.", "price": 172.06, "category": "Home Appliances"}
+{"objectID": "578", "name": "Smart External Hard Drive", "description": "smart external hard drive with surround sound.", "price": 131.52, "category": "Electronics"}
+{"objectID": "579", "name": "Breathable Dumbbell Set", "description": "breathable dumbbell set for home workouts.", "price": 12.57, "category": "Sports"}
+{"objectID": "580", "name": "Compact Air Fryer", "description": "compact air fryer for smoothies and soups.", "price": 121.21, "category": "Home Appliances"}
+{"objectID": "581", "name": "Breathable Gym Gloves", "description": "breathable gym gloves made from eco-friendly materials.", "price": 16.64, "category": "Sports"}
+{"objectID": "582", "name": "Durable Gym Gloves", "description": "durable gym gloves for all fitness levels.", "price": 151.25, "category": "Sports"}
+{"objectID": "583", "name": "Lightweight Yoga Mat", "description": "lightweight yoga mat with anti-slip grip.", "price": 151.48, "category": "Sports"}
+{"objectID": "584", "name": "Programmable Food Processor", "description": "programmable food processor with easy-clean design.", "price": 147.5, "category": "Home Appliances"}
+{"objectID": "585", "name": "High-Speed Bluetooth Speaker", "description": "high-speed bluetooth speaker with customizable buttons.", "price": 123.28, "category": "Electronics"}
+{"objectID": "586", "name": "Smart Smart Watch", "description": "smart smart watch with long battery life.", "price": 49.85, "category": "Electronics"}
+{"objectID": "587", "name": "Portable Portable Charger", "description": "portable portable charger with waterproof design.", "price": 149.75, "category": "Electronics"}
+{"objectID": "588", "name": "Non-Slip Tennis Racket", "description": "non-slip tennis racket with adjustable straps.", "price": 184.4, "category": "Sports"}
+{"objectID": "589", "name": "Breathable Yoga Mat", "description": "breathable yoga mat for marathon training.", "price": 52.33, "category": "Sports"}
+{"objectID": "590", "name": "Portable 4K Monitor", "description": "portable 4k monitor with long battery life.", "price": 199.05, "category": "Electronics"}
+{"objectID": "591", "name": "Fast-Boiling Juicer", "description": "fast-boiling juicer for quick meals.", "price": 117.68, "category": "Home Appliances"}
+{"objectID": "592", "name": "Compact Steam Iron", "description": "compact steam iron for small kitchens.", "price": 133.32, "category": "Home Appliances"}
+{"objectID": "593", "name": "Stainless Steel Steam Iron", "description": "stainless steel steam iron with programmable timer.", "price": 19.61, "category": "Home Appliances"}
+{"objectID": "594", "name": "Non-Slip Running Shoes", "description": "non-slip running shoes made from eco-friendly materials.", "price": 87.37, "category": "Sports"}
+{"objectID": "595", "name": "Smart Mechanical Keyboard", "description": "smart mechanical keyboard with 4K resolution.", "price": 39.21, "category": "Electronics"}
+{"objectID": "596", "name": "RGB USB-C Hub", "description": "rgb usb-c hub with surround sound.", "price": 89.03, "category": "Electronics"}
+{"objectID": "597", "name": "High-Performance Resistance Bands", "description": "high-performance resistance bands made from eco-friendly materials.", "price": 187.33, "category": "Sports"}
+{"objectID": "598", "name": "Smart Gaming Headset", "description": "smart gaming headset with fast charging.", "price": 75.13, "category": "Electronics"}
+{"objectID": "599", "name": "Breathable Cycling Helmet", "description": "breathable cycling helmet with adjustable straps.", "price": 157.04, "category": "Sports"}
+{"objectID": "600", "name": "Programmable Rice Cooker", "description": "programmable rice cooker with 12-cup capacity.", "price": 100.09, "category": "Home Appliances"}
+{"objectID": "601", "name": "Breathable Soccer Ball", "description": "breathable soccer ball with shock absorption.", "price": 189.79, "category": "Sports"}
+{"objectID": "602", "name": "Breathable Treadmill Mat", "description": "breathable treadmill mat with adjustable straps.", "price": 143.66, "category": "Sports"}
+{"objectID": "603", "name": "Portable Bluetooth Speaker", "description": "portable bluetooth speaker with surround sound.", "price": 150.47, "category": "Electronics"}
+{"objectID": "604", "name": "Eco-Friendly Treadmill Mat", "description": "eco-friendly treadmill mat with adjustable straps.", "price": 174.63, "category": "Sports"}
+{"objectID": "605", "name": "RGB Portable Charger", "description": "rgb portable charger with multi-device connectivity.", "price": 186.07, "category": "Electronics"}
+{"objectID": "606", "name": "Lightweight Running Shoes", "description": "lightweight running shoes made from eco-friendly materials.", "price": 56.66, "category": "Sports"}
+{"objectID": "607", "name": "Wireless Bluetooth Speaker", "description": "wireless bluetooth speaker with customizable buttons.", "price": 23.04, "category": "Electronics"}
+{"objectID": "608", "name": "Ultra-Thin Portable Charger", "description": "ultra-thin portable charger with surround sound.", "price": 128.44, "category": "Electronics"}
+{"objectID": "609", "name": "Stainless Steel Slow Cooker", "description": "stainless steel slow cooker with 12-cup capacity.", "price": 149.8, "category": "Home Appliances"}
+{"objectID": "610", "name": "Multi-Function Waffle Maker", "description": "multi-function waffle maker for smoothies and soups.", "price": 48.22, "category": "Home Appliances"}
+{"objectID": "611", "name": "High-Performance Dumbbell Set", "description": "high-performance dumbbell set for all fitness levels.", "price": 17.56, "category": "Sports"}
+{"objectID": "612", "name": "Ergonomic Bluetooth Speaker", "description": "ergonomic bluetooth speaker with adjustable DPI.", "price": 164.75, "category": "Electronics"}
+{"objectID": "613", "name": "Multi-Function Slow Cooker", "description": "multi-function slow cooker with easy-clean design.", "price": 87.76, "category": "Home Appliances"}
+{"objectID": "614", "name": "Energy-Saving Steam Iron", "description": "energy-saving steam iron with 12-cup capacity.", "price": 85.87, "category": "Home Appliances"}
+{"objectID": "615", "name": "High-Speed Laptop Stand", "description": "high-speed laptop stand with multi-device connectivity.", "price": 179.94, "category": "Electronics"}
+{"objectID": "616", "name": "Fast-Boiling Microwave", "description": "fast-boiling microwave with programmable timer.", "price": 24.31, "category": "Home Appliances"}
+{"objectID": "617", "name": "High-Performance Yoga Block", "description": "high-performance yoga block made from eco-friendly materials.", "price": 122.26, "category": "Sports"}
+{"objectID": "618", "name": "Lightweight Dumbbell Set", "description": "lightweight dumbbell set with adjustable straps.", "price": 148.22, "category": "Sports"}
+{"objectID": "619", "name": "Multi-Function Blender", "description": "multi-function blender with 12-cup capacity.", "price": 196.43, "category": "Home Appliances"}
+{"objectID": "620", "name": "Automatic Hand Mixer", "description": "automatic hand mixer for small kitchens.", "price": 133.36, "category": "Home Appliances"}
+{"objectID": "621", "name": "High-Speed Wireless Earbuds", "description": "high-speed wireless earbuds with customizable buttons.", "price": 23.01, "category": "Electronics"}
+{"objectID": "622", "name": "Breathable Yoga Mat", "description": "breathable yoga mat made from eco-friendly materials.", "price": 29.22, "category": "Sports"}
+{"objectID": "623", "name": "Automatic Electric Kettle", "description": "automatic electric kettle with multiple speed settings.", "price": 51.15, "category": "Home Appliances"}
+{"objectID": "624", "name": "Breathable Gym Gloves", "description": "breathable gym gloves for all fitness levels.", "price": 131.39, "category": "Sports"}
+{"objectID": "625", "name": "High-Speed External Hard Drive", "description": "high-speed external hard drive with long battery life.", "price": 125.26, "category": "Electronics"}
+{"objectID": "626", "name": "Noise-Cancelling Smart Watch", "description": "noise-cancelling smart watch with customizable buttons.", "price": 36.24, "category": "Electronics"}
+{"objectID": "627", "name": "Stainless Steel Toaster Oven", "description": "stainless steel toaster oven with easy-clean design.", "price": 69.27, "category": "Home Appliances"}
+{"objectID": "628", "name": "Durable Dumbbell Set", "description": "durable dumbbell set made from eco-friendly materials.", "price": 68.1, "category": "Sports"}
+{"objectID": "629", "name": "Non-Slip Running Shoes", "description": "non-slip running shoes for all fitness levels.", "price": 35.58, "category": "Sports"}
+{"objectID": "630", "name": "High-Performance Yoga Mat", "description": "high-performance yoga mat with shock absorption.", "price": 154.94, "category": "Sports"}
+{"objectID": "631", "name": "Compact Electric Grill", "description": "compact electric grill with auto shut-off.", "price": 139.47, "category": "Home Appliances"}
+{"objectID": "632", "name": "Multi-Function Blender", "description": "multi-function blender with multiple speed settings.", "price": 167.46, "category": "Home Appliances"}
+{"objectID": "633", "name": "Lightweight Cycling Helmet", "description": "lightweight cycling helmet made from eco-friendly materials.", "price": 157.96, "category": "Sports"}
+{"objectID": "634", "name": "Non-Slip Treadmill Mat", "description": "non-slip treadmill mat with adjustable straps.", "price": 122.74, "category": "Sports"}
+{"objectID": "635", "name": "Durable Yoga Block", "description": "durable yoga block with shock absorption.", "price": 52.33, "category": "Sports"}
+{"objectID": "636", "name": "High-Speed Bluetooth Speaker", "description": "high-speed bluetooth speaker with surround sound.", "price": 10.6, "category": "Electronics"}
+{"objectID": "637", "name": "Adjustable Jump Rope", "description": "adjustable jump rope for marathon training.", "price": 172.9, "category": "Sports"}
+{"objectID": "638", "name": "High-Speed Portable Charger", "description": "high-speed portable charger with 4K resolution.", "price": 74.36, "category": "Electronics"}
+{"objectID": "639", "name": "Noise-Cancelling Smartphone Holder", "description": "noise-cancelling smartphone holder with customizable buttons.", "price": 101.74, "category": "Electronics"}
+{"objectID": "640", "name": "Durable Jump Rope", "description": "durable jump rope made from eco-friendly materials.", "price": 29.2, "category": "Sports"}
+{"objectID": "641", "name": "Wireless LED Desk Lamp", "description": "wireless led desk lamp with fast charging.", "price": 190.32, "category": "Electronics"}
+{"objectID": "642", "name": "Lightweight Kettlebell", "description": "lightweight kettlebell with adjustable straps.", "price": 118.62, "category": "Sports"}
+{"objectID": "643", "name": "Wireless Mechanical Keyboard", "description": "wireless mechanical keyboard with surround sound.", "price": 131.11, "category": "Electronics"}
+{"objectID": "644", "name": "Non-Slip Treadmill Mat", "description": "non-slip treadmill mat for outdoor activities.", "price": 194.62, "category": "Sports"}
+{"objectID": "645", "name": "Stainless Steel Waffle Maker", "description": "stainless steel waffle maker with easy-clean design.", "price": 64.58, "category": "Home Appliances"}
+{"objectID": "646", "name": "Wireless Laptop Stand", "description": "wireless laptop stand with waterproof design.", "price": 52.48, "category": "Electronics"}
+{"objectID": "647", "name": "Stainless Steel Food Processor", "description": "stainless steel food processor with auto shut-off.", "price": 195.27, "category": "Home Appliances"}
+{"objectID": "648", "name": "Stainless Steel Hand Mixer", "description": "stainless steel hand mixer for small kitchens.", "price": 34.92, "category": "Home Appliances"}
+{"objectID": "649", "name": "Lightweight Basketball", "description": "lightweight basketball for marathon training.", "price": 123.37, "category": "Sports"}
+{"objectID": "650", "name": "Breathable Basketball", "description": "breathable basketball for home workouts.", "price": 73.05, "category": "Sports"}
+{"objectID": "651", "name": "High-Performance Running Shoes", "description": "high-performance running shoes for marathon training.", "price": 45.1, "category": "Sports"}
+{"objectID": "652", "name": "Fast-Boiling Juicer", "description": "fast-boiling juicer with auto shut-off.", "price": 64.79, "category": "Home Appliances"}
+{"objectID": "653", "name": "Ultra-Thin Wireless Earbuds", "description": "ultra-thin wireless earbuds with surround sound.", "price": 18.16, "category": "Electronics"}
+{"objectID": "654", "name": "Stainless Steel Rice Cooker", "description": "stainless steel rice cooker for smoothies and soups.", "price": 118.44, "category": "Home Appliances"}
+{"objectID": "655", "name": "Automatic Microwave", "description": "automatic microwave with programmable timer.", "price": 114.67, "category": "Home Appliances"}
+{"objectID": "656", "name": "Compact Waffle Maker", "description": "compact waffle maker with multiple speed settings.", "price": 168.35, "category": "Home Appliances"}
+{"objectID": "657", "name": "Non-Slip Dumbbell Set", "description": "non-slip dumbbell set made from eco-friendly materials.", "price": 149.36, "category": "Sports"}
+{"objectID": "658", "name": "Non-Slip Running Shoes", "description": "non-slip running shoes for all fitness levels.", "price": 44.42, "category": "Sports"}
+{"objectID": "659", "name": "Compact Slow Cooker", "description": "compact slow cooker for quick meals.", "price": 191.81, "category": "Home Appliances"}
+{"objectID": "660", "name": "Compact Juicer", "description": "compact juicer with multiple speed settings.", "price": 28.48, "category": "Home Appliances"}
+{"objectID": "661", "name": "Durable Tennis Racket", "description": "durable tennis racket with anti-slip grip.", "price": 121.36, "category": "Sports"}
+{"objectID": "662", "name": "Programmable Electric Grill", "description": "programmable electric grill with 12-cup capacity.", "price": 70.64, "category": "Home Appliances"}
+{"objectID": "663", "name": "Programmable Steam Iron", "description": "programmable steam iron with programmable timer.", "price": 194.74, "category": "Home Appliances"}
+{"objectID": "664", "name": "Ergonomic Mechanical Keyboard", "description": "ergonomic mechanical keyboard with fast charging.", "price": 183.17, "category": "Electronics"}
+{"objectID": "665", "name": "Non-Slip Treadmill Mat", "description": "non-slip treadmill mat for all fitness levels.", "price": 86.54, "category": "Sports"}
+{"objectID": "666", "name": "Noise-Cancelling LED Desk Lamp", "description": "noise-cancelling led desk lamp with long battery life.", "price": 150.38, "category": "Electronics"}
+{"objectID": "667", "name": "Ergonomic Smartphone Holder", "description": "ergonomic smartphone holder with customizable buttons.", "price": 197.96, "category": "Electronics"}
+{"objectID": "668", "name": "Breathable Jump Rope", "description": "breathable jump rope with shock absorption.", "price": 82.68, "category": "Sports"}
+{"objectID": "669", "name": "Stainless Steel Electric Grill", "description": "stainless steel electric grill with multiple speed settings.", "price": 34.82, "category": "Home Appliances"}
+{"objectID": "670", "name": "Compact Toaster Oven", "description": "compact toaster oven with multiple speed settings.", "price": 136.45, "category": "Home Appliances"}
+{"objectID": "671", "name": "Energy-Saving Air Fryer", "description": "energy-saving air fryer with easy-clean design.", "price": 187.99, "category": "Home Appliances"}
+{"objectID": "672", "name": "Fast-Boiling Electric Kettle", "description": "fast-boiling electric kettle with auto shut-off.", "price": 10.15, "category": "Home Appliances"}
+{"objectID": "673", "name": "Smart Gaming Headset", "description": "smart gaming headset with long battery life.", "price": 47.04, "category": "Electronics"}
+{"objectID": "674", "name": "Adjustable Kettlebell", "description": "adjustable kettlebell with adjustable straps.", "price": 190.5, "category": "Sports"}
+{"objectID": "675", "name": "High-Speed Laptop Stand", "description": "high-speed laptop stand with fast charging.", "price": 78.27, "category": "Electronics"}
+{"objectID": "676", "name": "Stainless Steel Waffle Maker", "description": "stainless steel waffle maker with multiple speed settings.", "price": 11.87, "category": "Home Appliances"}
+{"objectID": "677", "name": "Ultra-Thin External Hard Drive", "description": "ultra-thin external hard drive with 4K resolution.", "price": 96.79, "category": "Electronics"}
+{"objectID": "678", "name": "Compact Blender", "description": "compact blender with multiple speed settings.", "price": 118.24, "category": "Home Appliances"}
+{"objectID": "679", "name": "Smart Mechanical Keyboard", "description": "smart mechanical keyboard with long battery life.", "price": 119.07, "category": "Electronics"}
+{"objectID": "680", "name": "Smart Laptop Stand", "description": "smart laptop stand with 4K resolution.", "price": 100.92, "category": "Electronics"}
+{"objectID": "681", "name": "Ultra-Thin Webcam", "description": "ultra-thin webcam with fast charging.", "price": 94.62, "category": "Electronics"}
+{"objectID": "682", "name": "Multi-Function Coffee Maker", "description": "multi-function coffee maker with 12-cup capacity.", "price": 28.38, "category": "Home Appliances"}
+{"objectID": "683", "name": "Portable Laptop Stand", "description": "portable laptop stand with waterproof design.", "price": 113.11, "category": "Electronics"}
+{"objectID": "684", "name": "Programmable Air Fryer", "description": "programmable air fryer with auto shut-off.", "price": 198.01, "category": "Home Appliances"}
+{"objectID": "685", "name": "Wireless Gaming Headset", "description": "wireless gaming headset with waterproof design.", "price": 116.06, "category": "Electronics"}
+{"objectID": "686", "name": "Noise-Cancelling Mechanical Keyboard", "description": "noise-cancelling mechanical keyboard with customizable buttons.", "price": 26.02, "category": "Electronics"}
+{"objectID": "687", "name": "High-Speed Bluetooth Speaker", "description": "high-speed bluetooth speaker with fast charging.", "price": 31.87, "category": "Electronics"}
+{"objectID": "688", "name": "Portable External Hard Drive", "description": "portable external hard drive with adjustable DPI.", "price": 118.76, "category": "Electronics"}
+{"objectID": "689", "name": "Ultra-Thin Smart Watch", "description": "ultra-thin smart watch with surround sound.", "price": 182.61, "category": "Electronics"}
+{"objectID": "690", "name": "High-Performance Jump Rope", "description": "high-performance jump rope for all fitness levels.", "price": 123.89, "category": "Sports"}
+{"objectID": "691", "name": "Lightweight Soccer Ball", "description": "lightweight soccer ball for all fitness levels.", "price": 191.43, "category": "Sports"}
+{"objectID": "692", "name": "High-Speed Wireless Earbuds", "description": "high-speed wireless earbuds with adjustable DPI.", "price": 45.83, "category": "Electronics"}
+{"objectID": "693", "name": "Breathable Tennis Racket", "description": "breathable tennis racket made from eco-friendly materials.", "price": 107.23, "category": "Sports"}
+{"objectID": "694", "name": "Multi-Function Electric Grill", "description": "multi-function electric grill with programmable timer.", "price": 10.62, "category": "Home Appliances"}
+{"objectID": "695", "name": "Eco-Friendly Resistance Bands", "description": "eco-friendly resistance bands with adjustable straps.", "price": 109.38, "category": "Sports"}
+{"objectID": "696", "name": "Multi-Function Microwave", "description": "multi-function microwave for smoothies and soups.", "price": 10.19, "category": "Home Appliances"}
+{"objectID": "697", "name": "Wireless Webcam", "description": "wireless webcam with surround sound.", "price": 184.04, "category": "Electronics"}
+{"objectID": "698", "name": "Adjustable Tennis Racket", "description": "adjustable tennis racket with anti-slip grip.", "price": 158.31, "category": "Sports"}
+{"objectID": "699", "name": "Durable Dumbbell Set", "description": "durable dumbbell set for outdoor activities.", "price": 87.16, "category": "Sports"}
+{"objectID": "700", "name": "High-Speed Wireless Earbuds", "description": "high-speed wireless earbuds with fast charging.", "price": 179.91, "category": "Electronics"}
+{"objectID": "701", "name": "Programmable Air Fryer", "description": "programmable air fryer for small kitchens.", "price": 15.91, "category": "Home Appliances"}
+{"objectID": "702", "name": "Ultra-Thin 4K Monitor", "description": "ultra-thin 4k monitor with adjustable DPI.", "price": 109.46, "category": "Electronics"}
+{"objectID": "703", "name": "Wireless External Hard Drive", "description": "wireless external hard drive with waterproof design.", "price": 151.56, "category": "Electronics"}
+{"objectID": "704", "name": "Fast-Boiling Microwave", "description": "fast-boiling microwave with programmable timer.", "price": 61.37, "category": "Home Appliances"}
+{"objectID": "705", "name": "Smart Bluetooth Speaker", "description": "smart bluetooth speaker with multi-device connectivity.", "price": 41.57, "category": "Electronics"}
+{"objectID": "706", "name": "Non-Slip Treadmill Mat", "description": "non-slip treadmill mat made from eco-friendly materials.", "price": 36.7, "category": "Sports"}
+{"objectID": "707", "name": "High-Performance Tennis Racket", "description": "high-performance tennis racket for all fitness levels.", "price": 120.44, "category": "Sports"}
+{"objectID": "708", "name": "Noise-Cancelling Smartphone Holder", "description": "noise-cancelling smartphone holder with multi-device connectivity.", "price": 82.09, "category": "Electronics"}
+{"objectID": "709", "name": "Breathable Tennis Racket", "description": "breathable tennis racket for outdoor activities.", "price": 129.23, "category": "Sports"}
+{"objectID": "710", "name": "Breathable Tennis Racket", "description": "breathable tennis racket with adjustable straps.", "price": 161.14, "category": "Sports"}
+{"objectID": "711", "name": "High-Speed Laptop Stand", "description": "high-speed laptop stand with 4K resolution.", "price": 156.09, "category": "Electronics"}
+{"objectID": "712", "name": "Durable Jump Rope", "description": "durable jump rope made from eco-friendly materials.", "price": 127.05, "category": "Sports"}
+{"objectID": "713", "name": "High-Speed Gaming Headset", "description": "high-speed gaming headset with multi-device connectivity.", "price": 36.28, "category": "Electronics"}
+{"objectID": "714", "name": "Wireless Portable Charger", "description": "wireless portable charger with 4K resolution.", "price": 94.23, "category": "Electronics"}
+{"objectID": "715", "name": "Multi-Function Air Fryer", "description": "multi-function air fryer for small kitchens.", "price": 115.59, "category": "Home Appliances"}
+{"objectID": "716", "name": "Compact Blender", "description": "compact blender with 12-cup capacity.", "price": 45.62, "category": "Home Appliances"}
+{"objectID": "717", "name": "Energy-Saving Air Fryer", "description": "energy-saving air fryer for smoothies and soups.", "price": 138.51, "category": "Home Appliances"}
+{"objectID": "718", "name": "Ultra-Thin Laptop Stand", "description": "ultra-thin laptop stand with 4K resolution.", "price": 113.41, "category": "Electronics"}
+{"objectID": "719", "name": "Fast-Boiling Microwave", "description": "fast-boiling microwave for smoothies and soups.", "price": 73.15, "category": "Home Appliances"}
+{"objectID": "720", "name": "Non-Slip Kettlebell", "description": "non-slip kettlebell with anti-slip grip.", "price": 57.73, "category": "Sports"}
+{"objectID": "721", "name": "Eco-Friendly Soccer Ball", "description": "eco-friendly soccer ball with shock absorption.", "price": 92.88, "category": "Sports"}
+{"objectID": "722", "name": "Eco-Friendly Cycling Helmet", "description": "eco-friendly cycling helmet for marathon training.", "price": 16.2, "category": "Sports"}
+{"objectID": "723", "name": "Multi-Function Electric Kettle", "description": "multi-function electric kettle with multiple speed settings.", "price": 36.32, "category": "Home Appliances"}
+{"objectID": "724", "name": "Noise-Cancelling Smart Watch", "description": "noise-cancelling smart watch with customizable buttons.", "price": 197.68, "category": "Electronics"}
+{"objectID": "725", "name": "Energy-Saving Toaster Oven", "description": "energy-saving toaster oven for quick meals.", "price": 91.37, "category": "Home Appliances"}
+{"objectID": "726", "name": "Programmable Juicer", "description": "programmable juicer for small kitchens.", "price": 195.13, "category": "Home Appliances"}
+{"objectID": "727", "name": "High-Speed Gaming Mouse Pad", "description": "high-speed gaming mouse pad with long battery life.", "price": 15.23, "category": "Electronics"}
+{"objectID": "728", "name": "Fast-Boiling Food Processor", "description": "fast-boiling food processor with auto shut-off.", "price": 92.85, "category": "Home Appliances"}
+{"objectID": "729", "name": "Durable Sports Water Bottle", "description": "durable sports water bottle for marathon training.", "price": 95.18, "category": "Sports"}
+{"objectID": "730", "name": "Wireless Webcam", "description": "wireless webcam with waterproof design.", "price": 100.23, "category": "Electronics"}
+{"objectID": "731", "name": "Portable Gaming Mouse Pad", "description": "portable gaming mouse pad with 4K resolution.", "price": 180.99, "category": "Electronics"}
+{"objectID": "732", "name": "Ergonomic External Hard Drive", "description": "ergonomic external hard drive with waterproof design.", "price": 54.26, "category": "Electronics"}
+{"objectID": "733", "name": "High-Performance Sports Water Bottle", "description": "high-performance sports water bottle for home workouts.", "price": 63.29, "category": "Sports"}
+{"objectID": "734", "name": "Stainless Steel Food Processor", "description": "stainless steel food processor for quick meals.", "price": 187.46, "category": "Home Appliances"}
+{"objectID": "735", "name": "Stainless Steel Blender", "description": "stainless steel blender with 12-cup capacity.", "price": 52.96, "category": "Home Appliances"}
+{"objectID": "736", "name": "RGB USB-C Hub", "description": "rgb usb-c hub with 4K resolution.", "price": 104.91, "category": "Electronics"}
+{"objectID": "737", "name": "High-Performance Running Shoes", "description": "high-performance running shoes with adjustable straps.", "price": 61.39, "category": "Sports"}
+{"objectID": "738", "name": "High-Speed 4K Monitor", "description": "high-speed 4k monitor with adjustable DPI.", "price": 41.68, "category": "Electronics"}
+{"objectID": "739", "name": "Wireless Smartphone Holder", "description": "wireless smartphone holder with 4K resolution.", "price": 93.04, "category": "Electronics"}
+{"objectID": "740", "name": "Eco-Friendly Gym Gloves", "description": "eco-friendly gym gloves with adjustable straps.", "price": 176.56, "category": "Sports"}
+{"objectID": "741", "name": "Ultra-Thin LED Desk Lamp", "description": "ultra-thin led desk lamp with multi-device connectivity.", "price": 125.15, "category": "Electronics"}
+{"objectID": "742", "name": "Smart 4K Monitor", "description": "smart 4k monitor with 4K resolution.", "price": 118.77, "category": "Electronics"}
+{"objectID": "743", "name": "Adjustable Gym Gloves", "description": "adjustable gym gloves with adjustable straps.", "price": 112.39, "category": "Sports"}
+{"objectID": "744", "name": "Eco-Friendly Gym Gloves", "description": "eco-friendly gym gloves for marathon training.", "price": 84.45, "category": "Sports"}
+{"objectID": "745", "name": "Adjustable Yoga Block", "description": "adjustable yoga block for marathon training.", "price": 189.13, "category": "Sports"}
+{"objectID": "746", "name": "Smart USB-C Hub", "description": "smart usb-c hub with surround sound.", "price": 52.29, "category": "Electronics"}
+{"objectID": "747", "name": "Multi-Function Microwave", "description": "multi-function microwave with easy-clean design.", "price": 158.26, "category": "Home Appliances"}
+{"objectID": "748", "name": "RGB Smartphone Holder", "description": "rgb smartphone holder with long battery life.", "price": 137.76, "category": "Electronics"}
+{"objectID": "749", "name": "Multi-Function Juicer", "description": "multi-function juicer with multiple speed settings.", "price": 69.7, "category": "Home Appliances"}
+{"objectID": "750", "name": "Noise-Cancelling Portable Charger", "description": "noise-cancelling portable charger with multi-device connectivity.", "price": 152.02, "category": "Electronics"}
+{"objectID": "751", "name": "Multi-Function Toaster Oven", "description": "multi-function toaster oven with easy-clean design.", "price": 44.35, "category": "Home Appliances"}
+{"objectID": "752", "name": "Smart LED Desk Lamp", "description": "smart led desk lamp with customizable buttons.", "price": 54.67, "category": "Electronics"}
+{"objectID": "753", "name": "Multi-Function Juicer", "description": "multi-function juicer for smoothies and soups.", "price": 130.21, "category": "Home Appliances"}
+{"objectID": "754", "name": "Breathable Cycling Helmet", "description": "breathable cycling helmet with adjustable straps.", "price": 53.24, "category": "Sports"}
+{"objectID": "755", "name": "Eco-Friendly Dumbbell Set", "description": "eco-friendly dumbbell set for outdoor activities.", "price": 132.96, "category": "Sports"}
+{"objectID": "756", "name": "Ultra-Thin Smartphone Holder", "description": "ultra-thin smartphone holder with customizable buttons.", "price": 94.02, "category": "Electronics"}
+{"objectID": "757", "name": "Portable Gaming Headset", "description": "portable gaming headset with customizable buttons.", "price": 35.73, "category": "Electronics"}
+{"objectID": "758", "name": "Compact Hand Mixer", "description": "compact hand mixer for small kitchens.", "price": 152.84, "category": "Home Appliances"}
+{"objectID": "759", "name": "Lightweight Tennis Racket", "description": "lightweight tennis racket for marathon training.", "price": 19.01, "category": "Sports"}
+{"objectID": "760", "name": "Breathable Soccer Ball", "description": "breathable soccer ball for marathon training.", "price": 97.64, "category": "Sports"}
+{"objectID": "761", "name": "Smart 4K Monitor", "description": "smart 4k monitor with adjustable DPI.", "price": 142.26, "category": "Electronics"}
+{"objectID": "762", "name": "Wireless LED Desk Lamp", "description": "wireless led desk lamp with multi-device connectivity.", "price": 135.46, "category": "Electronics"}
+{"objectID": "763", "name": "RGB Smart Watch", "description": "rgb smart watch with multi-device connectivity.", "price": 104.52, "category": "Electronics"}
+{"objectID": "764", "name": "High-Performance Kettlebell", "description": "high-performance kettlebell with anti-slip grip.", "price": 192.95, "category": "Sports"}
+{"objectID": "765", "name": "Wireless External Hard Drive", "description": "wireless external hard drive with waterproof design.", "price": 197.13, "category": "Electronics"}
+{"objectID": "766", "name": "Smart Mechanical Keyboard", "description": "smart mechanical keyboard with multi-device connectivity.", "price": 22.87, "category": "Electronics"}
+{"objectID": "767", "name": "High-Performance Cycling Helmet", "description": "high-performance cycling helmet for outdoor activities.", "price": 99.04, "category": "Sports"}
+{"objectID": "768", "name": "Eco-Friendly Basketball", "description": "eco-friendly basketball for home workouts.", "price": 70.99, "category": "Sports"}
+{"objectID": "769", "name": "Multi-Function Microwave", "description": "multi-function microwave with auto shut-off.", "price": 152.04, "category": "Home Appliances"}
+{"objectID": "770", "name": "Lightweight Yoga Block", "description": "lightweight yoga block made from eco-friendly materials.", "price": 114.44, "category": "Sports"}
+{"objectID": "771", "name": "Noise-Cancelling Wireless Mouse", "description": "noise-cancelling wireless mouse with long battery life.", "price": 122.02, "category": "Electronics"}
+{"objectID": "772", "name": "Ultra-Thin Smartphone Holder", "description": "ultra-thin smartphone holder with 4K resolution.", "price": 167.22, "category": "Electronics"}
+{"objectID": "773", "name": "Lightweight Tennis Racket", "description": "lightweight tennis racket with adjustable straps.", "price": 142.48, "category": "Sports"}
+{"objectID": "774", "name": "Adjustable Fitness Tracker", "description": "adjustable fitness tracker with anti-slip grip.", "price": 67.44, "category": "Sports"}
+{"objectID": "775", "name": "High-Performance Kettlebell", "description": "high-performance kettlebell with adjustable straps.", "price": 158.7, "category": "Sports"}
+{"objectID": "776", "name": "Adjustable Cycling Helmet", "description": "adjustable cycling helmet with adjustable straps.", "price": 13.83, "category": "Sports"}
+{"objectID": "777", "name": "Multi-Function Toaster Oven", "description": "multi-function toaster oven with 12-cup capacity.", "price": 14.04, "category": "Home Appliances"}
+{"objectID": "778", "name": "Adjustable Basketball", "description": "adjustable basketball for all fitness levels.", "price": 193.38, "category": "Sports"}
+{"objectID": "779", "name": "Stainless Steel Electric Grill", "description": "stainless steel electric grill for small kitchens.", "price": 172.88, "category": "Home Appliances"}
+{"objectID": "780", "name": "Stainless Steel Vacuum Cleaner", "description": "stainless steel vacuum cleaner with multiple speed settings.", "price": 184.54, "category": "Home Appliances"}
+{"objectID": "781", "name": "High-Speed External Hard Drive", "description": "high-speed external hard drive with surround sound.", "price": 156.35, "category": "Electronics"}
+{"objectID": "782", "name": "Energy-Saving Juicer", "description": "energy-saving juicer with easy-clean design.", "price": 131.49, "category": "Home Appliances"}
+{"objectID": "783", "name": "Breathable Cycling Helmet", "description": "breathable cycling helmet with shock absorption.", "price": 33.16, "category": "Sports"}
+{"objectID": "784", "name": "Automatic Steam Iron", "description": "automatic steam iron with auto shut-off.", "price": 65.41, "category": "Home Appliances"}
+{"objectID": "785", "name": "Portable Gaming Mouse Pad", "description": "portable gaming mouse pad with adjustable DPI.", "price": 76.58, "category": "Electronics"}
+{"objectID": "786", "name": "High-Performance Gym Gloves", "description": "high-performance gym gloves for all fitness levels.", "price": 48.98, "category": "Sports"}
+{"objectID": "787", "name": "Stainless Steel Coffee Maker", "description": "stainless steel coffee maker with 12-cup capacity.", "price": 34.28, "category": "Home Appliances"}
+{"objectID": "788", "name": "Programmable Waffle Maker", "description": "programmable waffle maker with auto shut-off.", "price": 180.48, "category": "Home Appliances"}
+{"objectID": "789", "name": "High-Speed Wireless Mouse", "description": "high-speed wireless mouse with adjustable DPI.", "price": 159.52, "category": "Electronics"}
+{"objectID": "790", "name": "Eco-Friendly Sports Water Bottle", "description": "eco-friendly sports water bottle with anti-slip grip.", "price": 23.19, "category": "Sports"}
+{"objectID": "791", "name": "Energy-Saving Electric Grill", "description": "energy-saving electric grill for quick meals.", "price": 52.7, "category": "Home Appliances"}
+{"objectID": "792", "name": "RGB Laptop Stand", "description": "rgb laptop stand with multi-device connectivity.", "price": 173.84, "category": "Electronics"}
+{"objectID": "793", "name": "Automatic Microwave", "description": "automatic microwave with multiple speed settings.", "price": 187.89, "category": "Home Appliances"}
+{"objectID": "794", "name": "Portable Portable Charger", "description": "portable portable charger with fast charging.", "price": 12.62, "category": "Electronics"}
+{"objectID": "795", "name": "Ergonomic Smart Watch", "description": "ergonomic smart watch with surround sound.", "price": 58.69, "category": "Electronics"}
+{"objectID": "796", "name": "Automatic Vacuum Cleaner", "description": "automatic vacuum cleaner for smoothies and soups.", "price": 42.82, "category": "Home Appliances"}
+{"objectID": "797", "name": "Compact Microwave", "description": "compact microwave with easy-clean design.", "price": 55.93, "category": "Home Appliances"}
+{"objectID": "798", "name": "Energy-Saving Electric Grill", "description": "energy-saving electric grill with programmable timer.", "price": 66.35, "category": "Home Appliances"}
+{"objectID": "799", "name": "Durable Yoga Mat", "description": "durable yoga mat made from eco-friendly materials.", "price": 23.14, "category": "Sports"}
+{"objectID": "800", "name": "Portable Portable Charger", "description": "portable portable charger with multi-device connectivity.", "price": 93.14, "category": "Electronics"}
+{"objectID": "801", "name": "Programmable Vacuum Cleaner", "description": "programmable vacuum cleaner for smoothies and soups.", "price": 100.33, "category": "Home Appliances"}
+{"objectID": "802", "name": "Adjustable Gym Gloves", "description": "adjustable gym gloves with anti-slip grip.", "price": 35.32, "category": "Sports"}
+{"objectID": "803", "name": "Smart Gaming Mouse Pad", "description": "smart gaming mouse pad with customizable buttons.", "price": 183.63, "category": "Electronics"}
+{"objectID": "804", "name": "Stainless Steel Blender", "description": "stainless steel blender for quick meals.", "price": 150.41, "category": "Home Appliances"}
+{"objectID": "805", "name": "Smart Mechanical Keyboard", "description": "smart mechanical keyboard with customizable buttons.", "price": 50.2, "category": "Electronics"}
+{"objectID": "806", "name": "Fast-Boiling Toaster Oven", "description": "fast-boiling toaster oven with easy-clean design.", "price": 157.24, "category": "Home Appliances"}
+{"objectID": "807", "name": "Stainless Steel Food Processor", "description": "stainless steel food processor for quick meals.", "price": 41.13, "category": "Home Appliances"}
+{"objectID": "808", "name": "Multi-Function Hand Mixer", "description": "multi-function hand mixer with programmable timer.", "price": 18.27, "category": "Home Appliances"}
+{"objectID": "809", "name": "Wireless Wireless Mouse", "description": "wireless wireless mouse with customizable buttons.", "price": 19.44, "category": "Electronics"}
+{"objectID": "810", "name": "Wireless Gaming Headset", "description": "wireless gaming headset with fast charging.", "price": 24.97, "category": "Electronics"}
+{"objectID": "811", "name": "High-Speed Gaming Mouse Pad", "description": "high-speed gaming mouse pad with customizable buttons.", "price": 167.69, "category": "Electronics"}
+{"objectID": "812", "name": "Ergonomic Portable Charger", "description": "ergonomic portable charger with adjustable DPI.", "price": 151.53, "category": "Electronics"}
+{"objectID": "813", "name": "Durable Resistance Bands", "description": "durable resistance bands with anti-slip grip.", "price": 138.68, "category": "Sports"}
+{"objectID": "814", "name": "Fast-Boiling Food Processor", "description": "fast-boiling food processor for smoothies and soups.", "price": 174.5, "category": "Home Appliances"}
+{"objectID": "815", "name": "High-Performance Yoga Block", "description": "high-performance yoga block made from eco-friendly materials.", "price": 170.34, "category": "Sports"}
+{"objectID": "816", "name": "Stainless Steel Food Processor", "description": "stainless steel food processor for small kitchens.", "price": 121.45, "category": "Home Appliances"}
+{"objectID": "817", "name": "Automatic Steam Iron", "description": "automatic steam iron with easy-clean design.", "price": 165.69, "category": "Home Appliances"}
+{"objectID": "818", "name": "Compact Food Processor", "description": "compact food processor with programmable timer.", "price": 31.21, "category": "Home Appliances"}
+{"objectID": "819", "name": "Automatic Rice Cooker", "description": "automatic rice cooker for smoothies and soups.", "price": 91.23, "category": "Home Appliances"}
+{"objectID": "820", "name": "Smart Bluetooth Speaker", "description": "smart bluetooth speaker with fast charging.", "price": 130.3, "category": "Electronics"}
+{"objectID": "821", "name": "Ultra-Thin Gaming Headset", "description": "ultra-thin gaming headset with 4K resolution.", "price": 56.44, "category": "Electronics"}
+{"objectID": "822", "name": "Breathable Soccer Ball", "description": "breathable soccer ball with adjustable straps.", "price": 71.52, "category": "Sports"}
+{"objectID": "823", "name": "Multi-Function Steam Iron", "description": "multi-function steam iron with easy-clean design.", "price": 185.98, "category": "Home Appliances"}
+{"objectID": "824", "name": "Stainless Steel Toaster Oven", "description": "stainless steel toaster oven for quick meals.", "price": 85.19, "category": "Home Appliances"}
+{"objectID": "825", "name": "Durable Sports Water Bottle", "description": "durable sports water bottle for marathon training.", "price": 14.66, "category": "Sports"}
+{"objectID": "826", "name": "Durable Dumbbell Set", "description": "durable dumbbell set for all fitness levels.", "price": 91.98, "category": "Sports"}
+{"objectID": "827", "name": "Programmable Coffee Maker", "description": "programmable coffee maker with 12-cup capacity.", "price": 115.88, "category": "Home Appliances"}
+{"objectID": "828", "name": "Multi-Function Electric Grill", "description": "multi-function electric grill with multiple speed settings.", "price": 163.88, "category": "Home Appliances"}
+{"objectID": "829", "name": "Stainless Steel Blender", "description": "stainless steel blender with easy-clean design.", "price": 26.55, "category": "Home Appliances"}
+{"objectID": "830", "name": "Fast-Boiling Electric Kettle", "description": "fast-boiling electric kettle with 12-cup capacity.", "price": 169.88, "category": "Home Appliances"}
+{"objectID": "831", "name": "Ultra-Thin Smart Watch", "description": "ultra-thin smart watch with waterproof design.", "price": 134.42, "category": "Electronics"}
+{"objectID": "832", "name": "Wireless Portable Charger", "description": "wireless portable charger with 4K resolution.", "price": 147.88, "category": "Electronics"}
+{"objectID": "833", "name": "Smart LED Desk Lamp", "description": "smart led desk lamp with 4K resolution.", "price": 72.84, "category": "Electronics"}
+{"objectID": "834", "name": "Smart 4K Monitor", "description": "smart 4k monitor with 4K resolution.", "price": 195.07, "category": "Electronics"}
+{"objectID": "835", "name": "Multi-Function Waffle Maker", "description": "multi-function waffle maker with programmable timer.", "price": 193.42, "category": "Home Appliances"}
+{"objectID": "836", "name": "Multi-Function Toaster Oven", "description": "multi-function toaster oven with programmable timer.", "price": 118.14, "category": "Home Appliances"}
+{"objectID": "837", "name": "Multi-Function Rice Cooker", "description": "multi-function rice cooker for small kitchens.", "price": 89.35, "category": "Home Appliances"}
+{"objectID": "838", "name": "Multi-Function Air Fryer", "description": "multi-function air fryer with programmable timer.", "price": 106.67, "category": "Home Appliances"}
+{"objectID": "839", "name": "Ultra-Thin USB-C Hub", "description": "ultra-thin usb-c hub with long battery life.", "price": 137.9, "category": "Electronics"}
+{"objectID": "840", "name": "Energy-Saving Blender", "description": "energy-saving blender with multiple speed settings.", "price": 106.72, "category": "Home Appliances"}
+{"objectID": "841", "name": "Multi-Function Electric Grill", "description": "multi-function electric grill for quick meals.", "price": 49.92, "category": "Home Appliances"}
+{"objectID": "842", "name": "Automatic Air Fryer", "description": "automatic air fryer with auto shut-off.", "price": 114.08, "category": "Home Appliances"}
+{"objectID": "843", "name": "Multi-Function Waffle Maker", "description": "multi-function waffle maker with programmable timer.", "price": 176.81, "category": "Home Appliances"}
+{"objectID": "844", "name": "Portable LED Desk Lamp", "description": "portable led desk lamp with long battery life.", "price": 122.36, "category": "Electronics"}
+{"objectID": "845", "name": "Energy-Saving Toaster Oven", "description": "energy-saving toaster oven with easy-clean design.", "price": 59.69, "category": "Home Appliances"}
+{"objectID": "846", "name": "Wireless Wireless Earbuds", "description": "wireless wireless earbuds with adjustable DPI.", "price": 87.0, "category": "Electronics"}
+{"objectID": "847", "name": "Eco-Friendly Yoga Mat", "description": "eco-friendly yoga mat for marathon training.", "price": 135.05, "category": "Sports"}
+{"objectID": "848", "name": "Automatic Toaster Oven", "description": "automatic toaster oven with auto shut-off.", "price": 40.01, "category": "Home Appliances"}
+{"objectID": "849", "name": "Non-Slip Tennis Racket", "description": "non-slip tennis racket with adjustable straps.", "price": 98.68, "category": "Sports"}
+{"objectID": "850", "name": "Lightweight Gym Gloves", "description": "lightweight gym gloves with adjustable straps.", "price": 149.42, "category": "Sports"}
+{"objectID": "851", "name": "Breathable Resistance Bands", "description": "breathable resistance bands for marathon training.", "price": 98.79, "category": "Sports"}
+{"objectID": "852", "name": "Programmable Hand Mixer", "description": "programmable hand mixer for quick meals.", "price": 155.61, "category": "Home Appliances"}
+{"objectID": "853", "name": "Compact Hand Mixer", "description": "compact hand mixer for quick meals.", "price": 182.12, "category": "Home Appliances"}
+{"objectID": "854", "name": "Lightweight Cycling Helmet", "description": "lightweight cycling helmet for all fitness levels.", "price": 30.99, "category": "Sports"}
+{"objectID": "855", "name": "Durable Soccer Ball", "description": "durable soccer ball with shock absorption.", "price": 114.38, "category": "Sports"}
+{"objectID": "856", "name": "Ergonomic Bluetooth Speaker", "description": "ergonomic bluetooth speaker with long battery life.", "price": 39.07, "category": "Electronics"}
+{"objectID": "857", "name": "Eco-Friendly Jump Rope", "description": "eco-friendly jump rope made from eco-friendly materials.", "price": 36.73, "category": "Sports"}
+{"objectID": "858", "name": "Fast-Boiling Air Fryer", "description": "fast-boiling air fryer with programmable timer.", "price": 57.14, "category": "Home Appliances"}
+{"objectID": "859", "name": "RGB Gaming Headset", "description": "rgb gaming headset with multi-device connectivity.", "price": 90.17, "category": "Electronics"}
+{"objectID": "860", "name": "Breathable Gym Gloves", "description": "breathable gym gloves for outdoor activities.", "price": 186.99, "category": "Sports"}
+{"objectID": "861", "name": "Energy-Saving Slow Cooker", "description": "energy-saving slow cooker with easy-clean design.", "price": 144.08, "category": "Home Appliances"}
+{"objectID": "862", "name": "Stainless Steel Electric Kettle", "description": "stainless steel electric kettle for quick meals.", "price": 27.45, "category": "Home Appliances"}
+{"objectID": "863", "name": "High-Speed Wireless Earbuds", "description": "high-speed wireless earbuds with adjustable DPI.", "price": 195.25, "category": "Electronics"}
+{"objectID": "864", "name": "High-Speed Bluetooth Speaker", "description": "high-speed bluetooth speaker with 4K resolution.", "price": 153.56, "category": "Electronics"}
+{"objectID": "865", "name": "High-Performance Treadmill Mat", "description": "high-performance treadmill mat with shock absorption.", "price": 156.36, "category": "Sports"}
+{"objectID": "866", "name": "Fast-Boiling Microwave", "description": "fast-boiling microwave for smoothies and soups.", "price": 157.55, "category": "Home Appliances"}
+{"objectID": "867", "name": "Portable Laptop Stand", "description": "portable laptop stand with waterproof design.", "price": 17.7, "category": "Electronics"}
+{"objectID": "868", "name": "Ergonomic 4K Monitor", "description": "ergonomic 4k monitor with long battery life.", "price": 185.66, "category": "Electronics"}
+{"objectID": "869", "name": "Adjustable Tennis Racket", "description": "adjustable tennis racket with anti-slip grip.", "price": 178.83, "category": "Sports"}
+{"objectID": "870", "name": "Stainless Steel Vacuum Cleaner", "description": "stainless steel vacuum cleaner with multiple speed settings.", "price": 136.83, "category": "Home Appliances"}
+{"objectID": "871", "name": "Lightweight Yoga Block", "description": "lightweight yoga block with anti-slip grip.", "price": 107.25, "category": "Sports"}
+{"objectID": "872", "name": "High-Speed Smartphone Holder", "description": "high-speed smartphone holder with waterproof design.", "price": 167.2, "category": "Electronics"}
+{"objectID": "873", "name": "High-Performance Soccer Ball", "description": "high-performance soccer ball with adjustable straps.", "price": 199.38, "category": "Sports"}
+{"objectID": "874", "name": "Adjustable Sports Water Bottle", "description": "adjustable sports water bottle for outdoor activities.", "price": 145.61, "category": "Sports"}
+{"objectID": "875", "name": "Multi-Function Air Fryer", "description": "multi-function air fryer for quick meals.", "price": 155.39, "category": "Home Appliances"}
+{"objectID": "876", "name": "RGB Gaming Mouse Pad", "description": "rgb gaming mouse pad with waterproof design.", "price": 17.51, "category": "Electronics"}
+{"objectID": "877", "name": "Ergonomic Wireless Earbuds", "description": "ergonomic wireless earbuds with 4K resolution.", "price": 45.96, "category": "Electronics"}
+{"objectID": "878", "name": "Portable Laptop Stand", "description": "portable laptop stand with surround sound.", "price": 160.22, "category": "Electronics"}
+{"objectID": "879", "name": "Non-Slip Jump Rope", "description": "non-slip jump rope with anti-slip grip.", "price": 127.57, "category": "Sports"}
+{"objectID": "880", "name": "Durable Gym Gloves", "description": "durable gym gloves for home workouts.", "price": 159.84, "category": "Sports"}
+{"objectID": "881", "name": "Smart Laptop Stand", "description": "smart laptop stand with customizable buttons.", "price": 86.48, "category": "Electronics"}
+{"objectID": "882", "name": "Breathable Cycling Helmet", "description": "breathable cycling helmet for marathon training.", "price": 21.27, "category": "Sports"}
+{"objectID": "883", "name": "Multi-Function Slow Cooker", "description": "multi-function slow cooker for smoothies and soups.", "price": 199.42, "category": "Home Appliances"}
+{"objectID": "884", "name": "Stainless Steel Rice Cooker", "description": "stainless steel rice cooker for smoothies and soups.", "price": 27.4, "category": "Home Appliances"}
+{"objectID": "885", "name": "Adjustable Fitness Tracker", "description": "adjustable fitness tracker for outdoor activities.", "price": 21.51, "category": "Sports"}
+{"objectID": "886", "name": "Multi-Function Toaster Oven", "description": "multi-function toaster oven with easy-clean design.", "price": 23.6, "category": "Home Appliances"}
+{"objectID": "887", "name": "Stainless Steel Blender", "description": "stainless steel blender for smoothies and soups.", "price": 105.0, "category": "Home Appliances"}
+{"objectID": "888", "name": "Multi-Function Steam Iron", "description": "multi-function steam iron for smoothies and soups.", "price": 88.9, "category": "Home Appliances"}
+{"objectID": "889", "name": "Eco-Friendly Cycling Helmet", "description": "eco-friendly cycling helmet with adjustable straps.", "price": 178.84, "category": "Sports"}
+{"objectID": "890", "name": "Wireless Gaming Mouse Pad", "description": "wireless gaming mouse pad with customizable buttons.", "price": 94.1, "category": "Electronics"}
+{"objectID": "891", "name": "Breathable Cycling Helmet", "description": "breathable cycling helmet for outdoor activities.", "price": 58.63, "category": "Sports"}
+{"objectID": "892", "name": "Automatic Hand Mixer", "description": "automatic hand mixer with auto shut-off.", "price": 112.74, "category": "Home Appliances"}
+{"objectID": "893", "name": "Stainless Steel Waffle Maker", "description": "stainless steel waffle maker with auto shut-off.", "price": 60.39, "category": "Home Appliances"}
+{"objectID": "894", "name": "Wireless External Hard Drive", "description": "wireless external hard drive with adjustable DPI.", "price": 141.47, "category": "Electronics"}
+{"objectID": "895", "name": "Lightweight Cycling Helmet", "description": "lightweight cycling helmet for outdoor activities.", "price": 155.88, "category": "Sports"}
+{"objectID": "896", "name": "Noise-Cancelling Portable Charger", "description": "noise-cancelling portable charger with customizable buttons.", "price": 192.37, "category": "Electronics"}
+{"objectID": "897", "name": "Wireless Bluetooth Speaker", "description": "wireless bluetooth speaker with 4K resolution.", "price": 147.87, "category": "Electronics"}
+{"objectID": "898", "name": "Durable Fitness Tracker", "description": "durable fitness tracker made from eco-friendly materials.", "price": 101.49, "category": "Sports"}
+{"objectID": "899", "name": "Energy-Saving Electric Kettle", "description": "energy-saving electric kettle with auto shut-off.", "price": 149.83, "category": "Home Appliances"}
+{"objectID": "900", "name": "Multi-Function Electric Grill", "description": "multi-function electric grill with auto shut-off.", "price": 29.97, "category": "Home Appliances"}
+{"objectID": "901", "name": "Energy-Saving Electric Grill", "description": "energy-saving electric grill for smoothies and soups.", "price": 184.22, "category": "Home Appliances"}
+{"objectID": "902", "name": "Fast-Boiling Air Fryer", "description": "fast-boiling air fryer with easy-clean design.", "price": 192.89, "category": "Home Appliances"}
+{"objectID": "903", "name": "Breathable Yoga Block", "description": "breathable yoga block with anti-slip grip.", "price": 116.2, "category": "Sports"}
+{"objectID": "904", "name": "High-Performance Tennis Racket", "description": "high-performance tennis racket for marathon training.", "price": 100.35, "category": "Sports"}
+{"objectID": "905", "name": "Ergonomic Mechanical Keyboard", "description": "ergonomic mechanical keyboard with adjustable DPI.", "price": 179.63, "category": "Electronics"}
+{"objectID": "906", "name": "Noise-Cancelling Gaming Headset", "description": "noise-cancelling gaming headset with customizable buttons.", "price": 102.16, "category": "Electronics"}
+{"objectID": "907", "name": "Breathable Gym Gloves", "description": "breathable gym gloves for home workouts.", "price": 164.26, "category": "Sports"}
+{"objectID": "908", "name": "Ultra-Thin Smartphone Holder", "description": "ultra-thin smartphone holder with adjustable DPI.", "price": 113.92, "category": "Electronics"}
+{"objectID": "909", "name": "Durable Sports Water Bottle", "description": "durable sports water bottle with adjustable straps.", "price": 162.17, "category": "Sports"}
+{"objectID": "910", "name": "Breathable Soccer Ball", "description": "breathable soccer ball made from eco-friendly materials.", "price": 12.24, "category": "Sports"}
+{"objectID": "911", "name": "Breathable Sports Water Bottle", "description": "breathable sports water bottle made from eco-friendly materials.", "price": 142.84, "category": "Sports"}
+{"objectID": "912", "name": "Durable Cycling Helmet", "description": "durable cycling helmet for home workouts.", "price": 89.79, "category": "Sports"}
+{"objectID": "913", "name": "Automatic Electric Grill", "description": "automatic electric grill with 12-cup capacity.", "price": 111.03, "category": "Home Appliances"}
+{"objectID": "914", "name": "Energy-Saving Juicer", "description": "energy-saving juicer for small kitchens.", "price": 156.96, "category": "Home Appliances"}
+{"objectID": "915", "name": "Breathable Basketball", "description": "breathable basketball for all fitness levels.", "price": 20.31, "category": "Sports"}
+{"objectID": "916", "name": "Adjustable Running Shoes", "description": "adjustable running shoes for all fitness levels.", "price": 49.69, "category": "Sports"}
+{"objectID": "917", "name": "High-Speed Wireless Earbuds", "description": "high-speed wireless earbuds with 4K resolution.", "price": 188.56, "category": "Electronics"}
+{"objectID": "918", "name": "Lightweight Sports Water Bottle", "description": "lightweight sports water bottle for marathon training.", "price": 43.1, "category": "Sports"}
+{"objectID": "919", "name": "RGB Laptop Stand", "description": "rgb laptop stand with waterproof design.", "price": 164.8, "category": "Electronics"}
+{"objectID": "920", "name": "Programmable Microwave", "description": "programmable microwave with programmable timer.", "price": 124.31, "category": "Home Appliances"}
+{"objectID": "921", "name": "Smart LED Desk Lamp", "description": "smart led desk lamp with multi-device connectivity.", "price": 10.02, "category": "Electronics"}
+{"objectID": "922", "name": "Energy-Saving Steam Iron", "description": "energy-saving steam iron with auto shut-off.", "price": 145.73, "category": "Home Appliances"}
+{"objectID": "923", "name": "Portable Wireless Earbuds", "description": "portable wireless earbuds with customizable buttons.", "price": 129.19, "category": "Electronics"}
+{"objectID": "924", "name": "High-Speed Webcam", "description": "high-speed webcam with waterproof design.", "price": 66.41, "category": "Electronics"}
+{"objectID": "925", "name": "Multi-Function Juicer", "description": "multi-function juicer with auto shut-off.", "price": 111.94, "category": "Home Appliances"}
+{"objectID": "926", "name": "Automatic Coffee Maker", "description": "automatic coffee maker for smoothies and soups.", "price": 103.74, "category": "Home Appliances"}
+{"objectID": "927", "name": "Ultra-Thin LED Desk Lamp", "description": "ultra-thin led desk lamp with waterproof design.", "price": 198.16, "category": "Electronics"}
+{"objectID": "928", "name": "Programmable Rice Cooker", "description": "programmable rice cooker with easy-clean design.", "price": 42.99, "category": "Home Appliances"}
+{"objectID": "929", "name": "Compact Microwave", "description": "compact microwave with 12-cup capacity.", "price": 84.28, "category": "Home Appliances"}
+{"objectID": "930", "name": "Lightweight Kettlebell", "description": "lightweight kettlebell with anti-slip grip.", "price": 172.35, "category": "Sports"}
+{"objectID": "931", "name": "Multi-Function Toaster Oven", "description": "multi-function toaster oven for quick meals.", "price": 95.48, "category": "Home Appliances"}
+{"objectID": "932", "name": "Noise-Cancelling Smart Watch", "description": "noise-cancelling smart watch with fast charging.", "price": 25.5, "category": "Electronics"}
+{"objectID": "933", "name": "Programmable Electric Kettle", "description": "programmable electric kettle with 12-cup capacity.", "price": 23.02, "category": "Home Appliances"}
+{"objectID": "934", "name": "Noise-Cancelling Laptop Stand", "description": "noise-cancelling laptop stand with waterproof design.", "price": 127.07, "category": "Electronics"}
+{"objectID": "935", "name": "Adjustable Basketball", "description": "adjustable basketball with adjustable straps.", "price": 173.77, "category": "Sports"}
+{"objectID": "936", "name": "Portable Wireless Mouse", "description": "portable wireless mouse with 4K resolution.", "price": 101.01, "category": "Electronics"}
+{"objectID": "937", "name": "RGB Laptop Stand", "description": "rgb laptop stand with long battery life.", "price": 62.23, "category": "Electronics"}
+{"objectID": "938", "name": "Ultra-Thin 4K Monitor", "description": "ultra-thin 4k monitor with customizable buttons.", "price": 123.46, "category": "Electronics"}
+{"objectID": "939", "name": "Eco-Friendly Yoga Mat", "description": "eco-friendly yoga mat for all fitness levels.", "price": 195.39, "category": "Sports"}
+{"objectID": "940", "name": "Automatic Slow Cooker", "description": "automatic slow cooker for smoothies and soups.", "price": 189.06, "category": "Home Appliances"}
+{"objectID": "941", "name": "RGB Smart Watch", "description": "rgb smart watch with customizable buttons.", "price": 31.44, "category": "Electronics"}
+{"objectID": "942", "name": "Automatic Juicer", "description": "automatic juicer with easy-clean design.", "price": 172.85, "category": "Home Appliances"}
+{"objectID": "943", "name": "Wireless USB-C Hub", "description": "wireless usb-c hub with 4K resolution.", "price": 126.98, "category": "Electronics"}
+{"objectID": "944", "name": "Noise-Cancelling USB-C Hub", "description": "noise-cancelling usb-c hub with fast charging.", "price": 28.94, "category": "Electronics"}
+{"objectID": "945", "name": "Adjustable Yoga Block", "description": "adjustable yoga block for all fitness levels.", "price": 117.19, "category": "Sports"}
+{"objectID": "946", "name": "Adjustable Kettlebell", "description": "adjustable kettlebell for marathon training.", "price": 93.65, "category": "Sports"}
+{"objectID": "947", "name": "High-Performance Running Shoes", "description": "high-performance running shoes for all fitness levels.", "price": 161.31, "category": "Sports"}
+{"objectID": "948", "name": "RGB Bluetooth Speaker", "description": "rgb bluetooth speaker with multi-device connectivity.", "price": 123.0, "category": "Electronics"}
+{"objectID": "949", "name": "High-Performance Sports Water Bottle", "description": "high-performance sports water bottle with shock absorption.", "price": 127.75, "category": "Sports"}
+{"objectID": "950", "name": "Breathable Dumbbell Set", "description": "breathable dumbbell set with adjustable straps.", "price": 166.37, "category": "Sports"}
+{"objectID": "951", "name": "Stainless Steel Toaster Oven", "description": "stainless steel toaster oven with 12-cup capacity.", "price": 59.85, "category": "Home Appliances"}
+{"objectID": "952", "name": "Fast-Boiling Vacuum Cleaner", "description": "fast-boiling vacuum cleaner with programmable timer.", "price": 101.3, "category": "Home Appliances"}
+{"objectID": "953", "name": "Lightweight Resistance Bands", "description": "lightweight resistance bands for outdoor activities.", "price": 140.12, "category": "Sports"}
+{"objectID": "954", "name": "Ultra-Thin Wireless Mouse", "description": "ultra-thin wireless mouse with customizable buttons.", "price": 164.83, "category": "Electronics"}
+{"objectID": "955", "name": "Ergonomic Bluetooth Speaker", "description": "ergonomic bluetooth speaker with surround sound.", "price": 20.32, "category": "Electronics"}
+{"objectID": "956", "name": "Eco-Friendly Running Shoes", "description": "eco-friendly running shoes for marathon training.", "price": 39.53, "category": "Sports"}
+{"objectID": "957", "name": "Ultra-Thin LED Desk Lamp", "description": "ultra-thin led desk lamp with long battery life.", "price": 120.81, "category": "Electronics"}
+{"objectID": "958", "name": "Energy-Saving Coffee Maker", "description": "energy-saving coffee maker for quick meals.", "price": 186.81, "category": "Home Appliances"}
+{"objectID": "959", "name": "High-Performance Sports Water Bottle", "description": "high-performance sports water bottle for all fitness levels.", "price": 105.08, "category": "Sports"}
+{"objectID": "960", "name": "Noise-Cancelling 4K Monitor", "description": "noise-cancelling 4k monitor with fast charging.", "price": 48.35, "category": "Electronics"}
+{"objectID": "961", "name": "High-Performance Dumbbell Set", "description": "high-performance dumbbell set with anti-slip grip.", "price": 39.31, "category": "Sports"}
+{"objectID": "962", "name": "Smart External Hard Drive", "description": "smart external hard drive with long battery life.", "price": 35.98, "category": "Electronics"}
+{"objectID": "963", "name": "Ultra-Thin Webcam", "description": "ultra-thin webcam with fast charging.", "price": 108.24, "category": "Electronics"}
+{"objectID": "964", "name": "Eco-Friendly Sports Water Bottle", "description": "eco-friendly sports water bottle for all fitness levels.", "price": 93.91, "category": "Sports"}
+{"objectID": "965", "name": "Ergonomic LED Desk Lamp", "description": "ergonomic led desk lamp with adjustable DPI.", "price": 64.97, "category": "Electronics"}
+{"objectID": "966", "name": "Stainless Steel Air Fryer", "description": "stainless steel air fryer for smoothies and soups.", "price": 140.11, "category": "Home Appliances"}
+{"objectID": "967", "name": "High-Speed Wireless Earbuds", "description": "high-speed wireless earbuds with long battery life.", "price": 32.33, "category": "Electronics"}
+{"objectID": "968", "name": "RGB Laptop Stand", "description": "rgb laptop stand with long battery life.", "price": 10.71, "category": "Electronics"}
+{"objectID": "969", "name": "Portable Gaming Headset", "description": "portable gaming headset with 4K resolution.", "price": 74.01, "category": "Electronics"}
+{"objectID": "970", "name": "Non-Slip Dumbbell Set", "description": "non-slip dumbbell set for marathon training.", "price": 11.19, "category": "Sports"}
+{"objectID": "971", "name": "Durable Dumbbell Set", "description": "durable dumbbell set made from eco-friendly materials.", "price": 33.96, "category": "Sports"}
+{"objectID": "972", "name": "Non-Slip Tennis Racket", "description": "non-slip tennis racket with anti-slip grip.", "price": 38.94, "category": "Sports"}
+{"objectID": "973", "name": "Multi-Function Vacuum Cleaner", "description": "multi-function vacuum cleaner with auto shut-off.", "price": 176.87, "category": "Home Appliances"}
+{"objectID": "974", "name": "Compact Vacuum Cleaner", "description": "compact vacuum cleaner for smoothies and soups.", "price": 53.94, "category": "Home Appliances"}
+{"objectID": "975", "name": "Durable Running Shoes", "description": "durable running shoes for outdoor activities.", "price": 14.38, "category": "Sports"}
+{"objectID": "976", "name": "RGB 4K Monitor", "description": "rgb 4k monitor with fast charging.", "price": 147.95, "category": "Electronics"}
+{"objectID": "977", "name": "Noise-Cancelling Wireless Earbuds", "description": "noise-cancelling wireless earbuds with 4K resolution.", "price": 14.62, "category": "Electronics"}
+{"objectID": "978", "name": "High-Performance Treadmill Mat", "description": "high-performance treadmill mat for outdoor activities.", "price": 96.24, "category": "Sports"}
+{"objectID": "979", "name": "Energy-Saving Hand Mixer", "description": "energy-saving hand mixer with easy-clean design.", "price": 34.36, "category": "Home Appliances"}
+{"objectID": "980", "name": "Lightweight Jump Rope", "description": "lightweight jump rope for marathon training.", "price": 115.89, "category": "Sports"}
+{"objectID": "981", "name": "RGB Bluetooth Speaker", "description": "rgb bluetooth speaker with waterproof design.", "price": 191.15, "category": "Electronics"}
+{"objectID": "982", "name": "High-Performance Basketball", "description": "high-performance basketball with shock absorption.", "price": 187.03, "category": "Sports"}
+{"objectID": "983", "name": "Portable Gaming Mouse Pad", "description": "portable gaming mouse pad with long battery life.", "price": 177.16, "category": "Electronics"}
+{"objectID": "984", "name": "Durable Tennis Racket", "description": "durable tennis racket with adjustable straps.", "price": 190.97, "category": "Sports"}
+{"objectID": "985", "name": "Energy-Saving Food Processor", "description": "energy-saving food processor for smoothies and soups.", "price": 51.24, "category": "Home Appliances"}
+{"objectID": "986", "name": "Portable Wireless Earbuds", "description": "portable wireless earbuds with customizable buttons.", "price": 151.43, "category": "Electronics"}
+{"objectID": "987", "name": "Wireless Webcam", "description": "wireless webcam with 4K resolution.", "price": 26.0, "category": "Electronics"}
+{"objectID": "988", "name": "Smart Laptop Stand", "description": "smart laptop stand with multi-device connectivity.", "price": 133.03, "category": "Electronics"}
+{"objectID": "989", "name": "Wireless Smartphone Holder", "description": "wireless smartphone holder with multi-device connectivity.", "price": 83.38, "category": "Electronics"}
+{"objectID": "990", "name": "Programmable Rice Cooker", "description": "programmable rice cooker with programmable timer.", "price": 99.07, "category": "Home Appliances"}
+{"objectID": "991", "name": "Stainless Steel Juicer", "description": "stainless steel juicer with programmable timer.", "price": 35.8, "category": "Home Appliances"}
+{"objectID": "992", "name": "Compact Vacuum Cleaner", "description": "compact vacuum cleaner for quick meals.", "price": 80.72, "category": "Home Appliances"}
+{"objectID": "993", "name": "Automatic Electric Grill", "description": "automatic electric grill with auto shut-off.", "price": 100.18, "category": "Home Appliances"}
+{"objectID": "994", "name": "High-Speed Mechanical Keyboard", "description": "high-speed mechanical keyboard with multi-device connectivity.", "price": 104.0, "category": "Electronics"}
+{"objectID": "995", "name": "Multi-Function Coffee Maker", "description": "multi-function coffee maker with 12-cup capacity.", "price": 92.11, "category": "Home Appliances"}
+{"objectID": "996", "name": "RGB Portable Charger", "description": "rgb portable charger with 4K resolution.", "price": 27.77, "category": "Electronics"}
+{"objectID": "997", "name": "Fast-Boiling Vacuum Cleaner", "description": "fast-boiling vacuum cleaner with 12-cup capacity.", "price": 21.01, "category": "Home Appliances"}
+{"objectID": "998", "name": "Wireless Smart Watch", "description": "wireless smart watch with customizable buttons.", "price": 45.42, "category": "Electronics"}
+{"objectID": "999", "name": "RGB External Hard Drive", "description": "rgb external hard drive with surround sound.", "price": 131.48, "category": "Electronics"}
+{"objectID": "1000", "name": "RGB Wireless Earbuds", "description": "rgb wireless earbuds with 4K resolution.", "price": 167.46, "category": "Electronics"}
