@@ -1,0 +1,14 @@
+{
+  "port": 8080,
+  "allowed_ips": [
+    "127.0.0.1"
+  ],
+  "rate_limit_per_second": 10,
+  "data_path": "./data",
+  "index_path": "./index",
+  "upsert_index_buffer": 15000000,
+  "compact_index_buffer": 45000000,
+  "default_scan_limit": 100,
+  "max_scan_limit": 1000,
+  "payload_limit": 2097152
+}

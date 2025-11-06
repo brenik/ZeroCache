@@ -1,0 +1,116 @@
+### 1. Get current status
+GET http://127.0.0.1:8080/status
+
+### 2. Get current settings
+GET http://127.0.0.1:8080/settings
+
+### Update index_buffer in settings
+PUT http://127.0.0.1:8080/settings
+Content-Type: application/json
+
+{
+  "compact_index_buffer": 40000000
+}
+
+
+### Get metadata for all collections (name, item count, indexed fields)
+GET http://127.0.0.1:8080/trees
+
+
+################################## Delete
+
+### compact db and indexes
+DELETE http://127.0.0.1:8080/compact
+X-Confirm-Compact: true
+
+### Purge all data
+DELETE http://127.0.0.1:8080/purge
+X-Confirm-Purge: true
+
+### Delete collection products
+DELETE http://127.0.0.1:8080/data/products
+X-Confirm-Purge: true
+
+### Delete product by objectID
+DELETE http://127.0.0.1:8080/data/products?objectID=1020511
+
+################ Get
+
+### Get all items in the products collection
+GET http://127.0.0.1:8080/data/products
+
+### Get up to 100 products (default limit)
+GET http://127.0.0.1:8080/data/products
+# Returns up to 100 items from the products collection, as per default_scan_limit.
+
+###. Try to get objectID=1020511
+GET http://127.0.0.1:8080/data/products?objectID=1020511
+
+###. Try to get udropship_vendor="BEULCO GmbH und Co. KG"
+GET http://127.0.0.1:8080/data/products?udropship_vendor='BEULCO GmbH und Co. KG'
+
+### Get up to 500 products (specified limit)
+GET http://127.0.0.1:8080/data/products?limit=100
+# Returns up to 500 items, since 500 is less than max_scan_limit (1000).
+
+### Get up to 1000 products (maximum limit)
+GET http://127.0.0.1:8080/data/products?limit=2000
+# Returns up to 1000 items, capped by max_scan_limit (1000), even though 2000 was requested.
+
+### Get up to 1000 products (maximum limit) & sort desc
+GET http://127.0.0.1:8080/data/products?limit=2000&sort_by=price&sort_order=desc
+
+### Get up to 2000 products (maximum limit) & sort by field price default ASC
+GET http://127.0.0.1:8080/data/products?limit=2000&sort_by=price
+
+### Get 50 products starting from the 101st
+GET http://127.0.0.1:8080/data/products?limit=50&offset=100
+# Skips 100 items and returns up to 50.
+
+### Get products by query
+GET http://127.0.0.1:8080/data/products?q=iphone
+
+###
+GET http://127.0.0.1:8080/data/products?q="Yoga Mat"
+
+###
+GET http://127.0.0.1:8080/data/products?q="Adjustable"
+
+###
+GET http://127.0.0.1:8080/data/products?q=89.99
+
+### Get products with multiple filters
+GET http://127.0.0.1:8080/data/products?category=Electronics&name=Mouse&limit=1
+# Returns products matching both filters, ordered by Tantivy search relevance.
+
+### Get products by category
+GET http://127.0.0.1:8080/data/products?category=Electronics
+
+###. Try to get price
+GET http://127.0.0.1:8080/data/products?price=131.48
+
+
+### Try to get min price
+GET http://127.0.0.1:8080/data/products?filter_min_price=80&sort_by=price
+
+### Try to get interval price
+GET http://127.0.0.1:8080/data/products?filter_min_price=100&filter_max_price=150&sort_by=price&sort_order=desc
+
+
+### Upsert 10 test products to /data/products using NDJSON and create indexes for objectID, name, description, category
+POST http://127.0.0.1:8080/data/products
+Content-Type: application/x-ndjson
+X-Upsert-Field: objectID,name,description,category,price
+
+{"objectID":"1","name":"Wireless Mouse","description":"Ergonomic wireless mouse with adjustable DPI and long battery life.","price":29.99,"category":"Electronics"}
+{"objectID":"2","name":"Mechanical Keyboard","description":"RGB backlit mechanical keyboard with cherry switches for gaming and typing.","price":89.99,"category":"Electronics"}
+{"objectID":"3","name":"Running Shoes","description":"Lightweight running shoes with cushioning for marathon training.","price":59.99,"category":"Sports"}
+{"objectID":"4","name":"Coffee Maker","description":"Automatic coffee maker with programmable timer and 12-cup capacity.","price":49.99,"category":"Home Appliances"}
+{"objectID":"5","name":"Bluetooth Speaker","description":"Portable Bluetooth speaker with waterproof design and 10-hour battery.","price":39.99,"category":"Electronics"}
+{"objectID":"6","name":"Yoga Mat","description":"Non-slip yoga mat made from eco-friendly materials, 6mm thick.","price":24.99,"category":"Sports"}
+{"objectID":"7","name":"Electric Kettle","description":"Fast-boiling electric kettle with auto shut-off and 1.7L capacity.","price":19.99,"category":"Home Appliances"}
+{"objectID":"8","name":"Gaming Headset","description":"Over-ear gaming headset with noise cancellation and surround sound.","price":69.99,"category":"Electronics"}
+{"objectID":"9","name":"Dumbbell Set","description":"Adjustable dumbbell set from 5 to 50 lbs for home workouts.","price":99.99,"category":"Sports"}
+{"objectID":"10","name":"Blender","description":"High-speed blender with multiple settings for smoothies and soups.","price":34.99,"category":"Home Appliances"}
+{"objectID":"11","name":"Yoga Mat","description":"Non-slip yoga mat made from eco-friendly materials, 6mm thick.","price":24.99,"category":"Sports"}
+
