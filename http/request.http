@@ -46,9 +46,6 @@ GET http://127.0.0.1:8080/data/products
 ###. Try to get objectID=1020511
 GET http://127.0.0.1:8080/data/products?objectID=1020511
 
-###. Try to get udropship_vendor="BEULCO GmbH und Co. KG"
-GET http://127.0.0.1:8080/data/products?udropship_vendor='BEULCO GmbH und Co. KG'
-
 ### Get up to 500 products (specified limit)
 GET http://127.0.0.1:8080/data/products?limit=100
 # Returns up to 500 items, since 500 is less than max_scan_limit (1000).
@@ -87,7 +84,7 @@ GET http://127.0.0.1:8080/data/products?category=Electronics&name=Mouse&limit=1
 GET http://127.0.0.1:8080/data/products?category=Electronics
 
 ###. Try to get price
-GET http://127.0.0.1:8080/data/products?price=131.48
+GET http://127.0.0.1:8080/data/products?price=99.99
 
 
 ### Try to get min price
@@ -100,7 +97,7 @@ GET http://127.0.0.1:8080/data/products?filter_min_price=100&filter_max_price=15
 ### Upsert 10 test products to /data/products using NDJSON and create indexes for objectID, name, description, category
 POST http://127.0.0.1:8080/data/products
 Content-Type: application/x-ndjson
-X-Upsert-Field: objectID,name,description,category,price
+X-Upsert-Field: objectID,name,description,category,price:f64
 
 {"objectID":"1","name":"Wireless Mouse","description":"Ergonomic wireless mouse with adjustable DPI and long battery life.","price":29.99,"category":"Electronics"}
 {"objectID":"2","name":"Mechanical Keyboard","description":"RGB backlit mechanical keyboard with cherry switches for gaming and typing.","price":89.99,"category":"Electronics"}

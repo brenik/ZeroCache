@@ -51,7 +51,7 @@ pub fn load_existing_collections(index_path: &str) -> HashMap<String, Collection
 
         let schema = index.schema();
         let stored_field = schema.fields().find(|(_, field_entry)| field_entry.is_stored());
-
+        
         let primary_field = if let Some((field, _)) = stored_field {
             schema.get_field_name(field).to_string()
         } else {
@@ -60,10 +60,17 @@ pub fn load_existing_collections(index_path: &str) -> HashMap<String, Collection
         };
 
         let mut index_fields = vec![];
-        for (field, _) in schema.fields() {
+        for (field, field_entry) in schema.fields() {
             let name = schema.get_field_name(field);
             if name != primary_field && name != "text" {
-                index_fields.push(name.to_string());
+                use tantivy::schema::FieldType;
+                let field_with_type = match field_entry.field_type() {
+                    FieldType::U64(_) => format!("{}:u64", name),
+                    FieldType::I64(_) => format!("{}:i64", name),
+                    FieldType::F64(_) => format!("{}:f64", name),
+                    _ => name.to_string(),
+                };
+                index_fields.push(field_with_type);
             }
         }
 

@@ -79,7 +79,7 @@ Server starts on `http://127.0.0.1:8080`
 ```bash
 curl -X POST http://127.0.0.1:8080/data/products \
   -H "Content-Type: application/x-ndjson" \
-  -H "X-Upsert-Field: objectID,name,description,category,price" \
+  -H "X-Upsert-Field: objectID,name,description,category,price:f64" \
   -d '{"objectID":"1","name":"Wireless Mouse","description":"Ergonomic wireless mouse with adjustable DPI","category":"Electronics","price":29.99}
 {"objectID":"2","name":"Mechanical Keyboard","description":"RGB backlit mechanical keyboard","category":"Electronics","price":89.99}
 {"objectID":"3","name":"Running Shoes","description":"Lightweight running shoes with cushioning","category":"Sports","price":59.99}
@@ -143,18 +143,23 @@ A collection is a group of JSON documents with indexed fields.
 ```http
 POST http://127.0.0.1:8080/data/products
 Content-Type: application/x-ndjson
-X-Upsert-Field: objectID,name,description,category,price
+X-Upsert-Field: objectID,name,description,category,price:f64
 ```
 
 **X-Upsert-Field header:**
 - First field = **primary key** (must be unique, used for direct lookups)
 - Other fields = **indexed fields** (searchable, filterable, and sortable)
+- **Field types** (optional): Add `:type` suffix for numeric fields
+    - `:u64` - Unsigned 64-bit integer (e.g., `quantity:u64`)
+    - `:i64` - Signed 64-bit integer (e.g., `temperature:i64`)
+    - `:f64` - 64-bit float (e.g., `price:f64`, `rating:f64`)
+    - No suffix = text field (default)
 
 **Example:**
 ```bash
 curl -X POST http://127.0.0.1:8080/data/products \
   -H "Content-Type: application/x-ndjson" \
-  -H "X-Upsert-Field: objectID,name,description,category,price" \
+  -H "X-Upsert-Field: objectID,name,description,category,price:f64" \
   -d '{"objectID":"1","name":"Mouse","description":"Wireless","category":"Electronics","price":29.99}
 {"objectID":"2","name":"Keyboard","description":"Mechanical","category":"Electronics","price":89.99}'
 ```
@@ -341,7 +346,7 @@ Returns all collections with item counts and indexed fields.
     {
       "name": "products",
       "count": 1000,
-      "indexed": ["objectID(primary)", "name", "category", "price"]
+      "indexed": ["objectID(primary, text)", "name(text)", "category(text)", "price(f64)"]
     }
   ],
   "total": 1

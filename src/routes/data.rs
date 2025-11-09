@@ -1,23 +1,26 @@
+use actix_web::{web, HttpRequest, HttpResponse, Responder};
+use serde_json::{json, Value};
 use std::collections::HashMap;
 use std::path::PathBuf;
+use std::sync::{Arc, RwLock};
+use std::io::Cursor;
+use std::path::Path;
+use std::fs;
+use std::ops::Bound;
+use log::{info, error, warn};
 use tantivy::query::QueryParser;
 use tantivy::collector::TopDocs;
 use tantivy::schema::{Field, FieldType};
 use tantivy::index::SegmentId;
-use actix_web::{web, HttpRequest, HttpResponse, Responder};
-use serde_json::{json, Value};
-use std::io::Cursor;
-use std::path::Path;
-use std::fs;
-use log::{info, error, warn};
 use tantivy::{Index, TantivyDocument};
 use tantivy::directory::MmapDirectory;
 use tantivy::{IndexWriter};
 use tantivy::schema::Value as TantivyValue;
-use std::sync::{Arc, RwLock};
+use tantivy::query::{BooleanQuery, Occur, RangeQuery};
+use tantivy::Term;
 
 use crate::models::{AppState, CollectionInfo};
-use crate::db::operations::{get_object_id_from_json, create_tantivy_schema};
+use crate::db::operations::{get_object_id_from_json, create_tantivy_schema, strip_type_suffix};
 
 pub async fn set_item(
     app_data: web::Data<AppState>,
@@ -157,21 +160,57 @@ pub async fn set_item(
                     let mut tantivy_doc = TantivyDocument::default();
                     tantivy_doc.add_text(primary_f, &object_id);
 
-                    for field_name in initial_index_fields {
+                    for field_spec in initial_index_fields {
+                        let (field_name, field_type) = if let Some((name, ftype)) = field_spec.split_once(':') {
+                            (name, Some(ftype))
+                        } else {
+                            (field_spec.as_str(), None)
+                        };
+
                         if let Some(value) = item.get(field_name) {
                             if let Ok(field) = schema.get_field(field_name) {
-                                tantivy_doc.add_text(field, &value.to_string());
+                                match field_type {
+                                    Some("u64") => {
+                                        if let Some(num) = value.as_u64() {
+                                            tantivy_doc.add_u64(field, num);
+                                        }
+                                    }
+                                    Some("i64") => {
+                                        if let Some(num) = value.as_i64() {
+                                            tantivy_doc.add_i64(field, num);
+                                        }
+                                    }
+                                    Some("f64") => {
+                                        let num = value.as_f64()
+                                            .or_else(|| value.as_u64().map(|n| n as f64))
+                                            .or_else(|| value.as_i64().map(|n| n as f64));
+                                        if let Some(num) = num {
+                                            tantivy_doc.add_f64(field, num);
+                                        }
+                                    }
+                                    _ => {
+                                        tantivy_doc.add_text(field, &value.to_string());
+                                    }
+                                }
                             }
                         }
                     }
 
                     let mut text_content = String::new();
-                    for field_name in &provided_index_fields {
+
+                    for field_spec in &provided_index_fields {
+                        let field_name = if let Some((name, _)) = field_spec.split_once(':') {
+                            name
+                        } else {
+                            field_spec.as_str()
+                        };
+
                         if let Some(value) = item.get(field_name) {
                             text_content.push_str(&value.to_string());
                             text_content.push(' ');
                         }
                     }
+
                     tantivy_doc.add_text(text_f, text_content.trim());
                     if let Err(e) = index_writer.add_document(tantivy_doc) {
                         error!("Failed to add document to Index: {}", e);
@@ -288,9 +327,10 @@ pub async fn get_item(
     let mut range_filters: HashMap<String, (Option<f64>, Option<f64>)> = HashMap::new();
 
     let settings = app_data.settings.read().unwrap();
-    let effective_limit = query.get("limit")
+    let requested_limit = query.get("limit")
         .and_then(|s| s.parse::<usize>().ok())
         .unwrap_or(settings.default_scan_limit);
+    let effective_limit = std::cmp::min(requested_limit, settings.max_scan_limit);
     let offset = query.get("offset")
         .and_then(|s| s.parse::<usize>().ok())
         .unwrap_or(0);
@@ -314,9 +354,8 @@ pub async fn get_item(
                 param_key == "q" {
                 continue;
             }
-
             if let Some(field_name) = param_key.strip_prefix("filter_min_") {
-                if !indexed_fields.contains(&field_name.to_string()) {
+                if !indexed_fields.iter().any(|f| strip_type_suffix(f) == field_name) {
                     return HttpResponse::BadRequest().json(json!({
                         "error": format!("Field '{}' is not indexed. Create an index for filtering.", field_name)
                     }));
@@ -328,7 +367,7 @@ pub async fn get_item(
                 }
                 has_filters = true;
             } else if let Some(field_name) = param_key.strip_prefix("filter_max_") {
-                if !indexed_fields.contains(&field_name.to_string()) {
+                if !indexed_fields.iter().any(|f| strip_type_suffix(f) == field_name) {
                     return HttpResponse::BadRequest().json(json!({
                         "error": format!("Field '{}' is not indexed. Create an index for filtering.", field_name)
                     }));
@@ -340,12 +379,12 @@ pub async fn get_item(
                 }
                 has_filters = true;
             } else {
-                if !indexed_fields.contains(param_key) {
+                if !indexed_fields.iter().any(|f| strip_type_suffix(f) == param_key) {
                     return HttpResponse::BadRequest().json(json!({
                         "error": format!("Field '{}' is not indexed. Create an index for filtering.", param_key)
                     }));
                 }
-                query_parts.push(format!("{}:\"{}\"", param_key, param_value));
+                query_parts.push(format!("{}:{}", param_key, param_value));
                 has_filters = true;
             }
         }
@@ -356,35 +395,95 @@ pub async fn get_item(
         }
 
         if has_filters {
-            let query_string = if query_parts.is_empty() {
-                "*".to_string()
-            } else {
-                query_parts.join(" AND ")
-            };
+            let mut subqueries: Vec<(Occur, Box<dyn tantivy::query::Query>)> = Vec::new();
 
-            let all_fields: Vec<Field> = schema.fields()
-                .filter(|(_, field_entry)| {
-                    matches!(*field_entry.field_type(), FieldType::Str(_))
-                })
-                .map(|(field, _)| field)
-                .collect();
+            // Text/term queries
+            if !query_parts.is_empty() {
+                let query_string = query_parts.join(" AND ");
+                let all_fields: Vec<Field> = schema.fields()
+                    .filter(|(_, field_entry)| {
+                        matches!(*field_entry.field_type(), FieldType::Str(_))
+                    })
+                    .map(|(field, _)| field)
+                    .collect();
 
-            let query_parser = QueryParser::for_index(&index, all_fields);
-            let tantivy_query = match query_parser.parse_query(&query_string) {
-                Ok(query) => query,
-                Err(e) => {
-                    warn!("Failed to parse search query '{}': {}", query_string, e);
-                    return HttpResponse::BadRequest().json(json!({
-                        "error": "Invalid search query",
-                        "details": e.to_string()
-                    }));
+                let query_parser = QueryParser::for_index(&index, all_fields);
+                match query_parser.parse_query(&query_string) {
+                    Ok(query) => {
+                        subqueries.push((Occur::Must, query));
+                    }
+                    Err(e) => {
+                        warn!("Failed to parse search query '{}': {}", query_string, e);
+                        return HttpResponse::BadRequest().json(json!({
+                    "error": "Invalid search query",
+                    "details": e.to_string()
+                }));
+                    }
                 }
-            };
+            }
 
-            // let settings = app_data.settings.read().unwrap();
-            // let limit = query.get("limit")
-            //     .and_then(|s| s.parse::<usize>().ok())
-            //     .unwrap_or(settings.max_scan_limit);
+            // Range queries for numeric fields
+            for (field_name, (min_opt, max_opt)) in &range_filters {
+                if let Ok(field) = schema.get_field(field_name) {
+                    let field_entry = schema.get_field_entry(field);
+
+                    let range_query: Box<dyn tantivy::query::Query> = match field_entry.field_type() {
+                        FieldType::U64(_) => {
+                            let lower_bound = if let Some(min_val) = min_opt {
+                                Bound::Included(Term::from_field_u64(field, *min_val as u64))
+                            } else {
+                                Bound::Unbounded
+                            };
+                            let upper_bound = if let Some(max_val) = max_opt {
+                                Bound::Included(Term::from_field_u64(field, *max_val as u64))
+                            } else {
+                                Bound::Unbounded
+                            };
+                            Box::new(RangeQuery::new(lower_bound, upper_bound))
+                        }
+                        FieldType::I64(_) => {
+                            let lower_bound = if let Some(min_val) = min_opt {
+                                Bound::Included(Term::from_field_i64(field, *min_val as i64))
+                            } else {
+                                Bound::Unbounded
+                            };
+                            let upper_bound = if let Some(max_val) = max_opt {
+                                Bound::Included(Term::from_field_i64(field, *max_val as i64))
+                            } else {
+                                Bound::Unbounded
+                            };
+                            Box::new(RangeQuery::new(lower_bound, upper_bound))
+                        }
+                        FieldType::F64(_) => {
+                            let lower_bound = if let Some(min_val) = min_opt {
+                                Bound::Included(Term::from_field_f64(field, *min_val))
+                            } else {
+                                Bound::Unbounded
+                            };
+                            let upper_bound = if let Some(max_val) = max_opt {
+                                Bound::Included(Term::from_field_f64(field, *max_val))
+                            } else {
+                                Bound::Unbounded
+                            };
+                            Box::new(RangeQuery::new(lower_bound, upper_bound))
+                        }
+                        _ => {
+                            return HttpResponse::BadRequest().json(json!({
+                    "error": format!("Field '{}' is not a numeric field", field_name)
+                }));
+                        }
+                    };
+                    subqueries.push((Occur::Must, range_query));
+                }
+            }
+
+            let tantivy_query: Box<dyn tantivy::query::Query> = if subqueries.len() == 1 {
+                subqueries.into_iter().next().unwrap().1
+            } else if subqueries.is_empty() {
+                Box::new(tantivy::query::AllQuery)
+            } else {
+                Box::new(BooleanQuery::new(subqueries))
+            };
 
             let top_docs = match searcher.search(&tantivy_query, &TopDocs::with_limit(effective_limit)) {
                 Ok(docs) => docs,
@@ -441,13 +540,6 @@ pub async fn get_item(
                 }
             }
         } else {
-            // let settings = app_data.settings.read().unwrap();
-            // let limit = query.get("limit")
-            //     .and_then(|s| s.parse::<usize>().ok())
-            //     .unwrap_or(settings.max_scan_limit);
-            // let offset = query.get("offset")
-            //     .and_then(|s| s.parse::<usize>().ok())
-            //     .unwrap_or(0);
 
             if let Ok(tree) = app_data.db.open_tree(&key) {
                 let mut count = 0;
@@ -476,30 +568,6 @@ pub async fn get_item(
                 info!("Full scan returned {} items (offset: {}, effective_limit: {})", results.len(), offset, effective_limit);
             }
         }
-    }
-
-    if !range_filters.is_empty() {
-        results.retain(|item| {
-            range_filters.iter().all(|(field_name, (min_opt, max_opt))| {
-                if let Some(field_value) = item.get(field_name) {
-                    let value_f64 = match field_value {
-                        Value::Number(n) => n.as_f64(),
-                        Value::String(s) => s.parse::<f64>().ok(),
-                        _ => None,
-                    };
-
-                    if let Some(val) = value_f64 {
-                        let min_ok = min_opt.map_or(true, |min| val >= min);
-                        let max_ok = max_opt.map_or(true, |max| val <= max);
-                        min_ok && max_ok
-                    } else {
-                        false
-                    }
-                } else {
-                    false
-                }
-            })
-        });
     }
 
     if let Some(sort_field_name) = query.get("sort_by") {
